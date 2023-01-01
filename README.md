@@ -35,7 +35,7 @@
 * Check the **Send Email** box to send an email to the Customer.
 * Mobile capabilties with Bootstrap.
 
-## Email Template
+## Custom Email Template
 
 ![App Screenshot](https://imgur.com/BifS2gK.jpg)
 
@@ -58,15 +58,15 @@
 * Upload and display your Company Logo.
 * Display your Company Title.
 * Display your Company Description.
-Add contact information to your emails using the pre-defined variables in your email template:
-* Company Owner
-* Company Address
-* Company Contact Phone
-* Company Contact Email
-* Google Place ID
-    * Used to automatically open up Google Reviews for your business using the provided email template.
-* Social Media Email Hyperlinks:
-    * Facebook, Twitter, LinkedIn, Instagram, YouTube, Amazon, Pinterest, Etsy, and Shopify.
+* Add contact information to your emails using the pre-defined variables in your email template:
+    * Company Owner
+    * Company Address
+    * Company Contact Phone
+    * Company Contact Email
+    * Google Place ID
+        * Used to automatically open up Google Reviews for your business using the provided email template.
+    * Social Media Email Hyperlinks:
+        * Google, Facebook, Twitter, LinkedIn, Instagram, YouTube, Amazon, Pinterest, Etsy, and Shopify.
 
 ## Installation
 
@@ -76,22 +76,23 @@ Install with **Homebrew**:
   brew tap scottgriv/palm-tree
 ```
 
-## Prerequisites
-
-Built with: 
+## Built using: 
 * PHP v8.1.6
 * jQuery v2.1.3 
 * Bootstrap v3.3.5
 * MariaDB 10.4.21
 * XAMPP 8.1.6
 
-I'd recommend using the XAMPP stack to run this application (although, its not required).
-* Download the latest version of **XAMPP** [here](https://www.apachefriends.org/download.html).
-  * XAMPP comes a Apache HTTP Server, PHP, and a MariaDB database stack already installed - everything you need to get Palm Tree up and running.
-* Start the XAMPP MySQL and Apache Web Server Services.
-* Import the provided database shell located in `Palm-Tree/sql/palm_tree.sql` into your MySQL database.
-* Place Palm-Tree in the htdocs folder and reach it using your machines IP address i.e. `127.0.0.1/Palm-Tree` or ``localhost/Palm-Tree``.
-* Upload the provided email templates in ``Palm-Tree/templates`` in the *Email Template* (adjust it according to your needs) or create your own.
-* Configure your Email Template and Business.
-* Add Customers.
+## Quick Start
+
+1. I'd recommend using the XAMPP stack to run this application (although, its not required).
+    * Download the latest version of **XAMPP** [here](https://www.apachefriends.org/download.html).
+    * XAMPP comes a Apache HTTP Server, PHP, and a MariaDB database stack already installed - everything you need to get Palm Tree up and running.
+2. Start the XAMPP MySQL and Apache Web Server Services.
+3. Import the provided database shell located in `Palm-Tree/sql/palm_tree.sql` into your MySQL database.
+4. Place Palm-Tree in the htdocs folder and reach it using your machines IP address i.e. `http://127.0.0.1/Palm-Tree` or ``http://localhost/Palm-Tree``.
+5. Upload the provided email templates in ``Palm-Tree/templates`` in the *Email Template* menu (adjust it according to your needs or create your own).
+6. Configure your Email Template and Business.
+7. Add Customers.
+
 * You're ready to go!  

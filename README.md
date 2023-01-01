@@ -9,11 +9,11 @@
  * Send marketing emails out, including emails requesting Google Business Reviews!
     * Directly open a Review window on your Google Business page with a click of a button within the email.
 
-![App Screenshot](https://imgur.com/ec4MeEY.jpg)
-
 ## Fully Interactive Table
 
-* **CRUD-enabled**
+![App Screenshot](https://imgur.com/ec4MeEY.jpg)
+
+* **CRUD-enabled:**
     * Create Customers
     * Update Customers
     * Delete Customers

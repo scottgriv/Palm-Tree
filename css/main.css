@@ -1,0 +1,267 @@
+/* Cascading Style Sheets File */
+
+/* Debugging */
+/* 
+* {
+  outline: 1px dashed;
+}
+*/
+
+/* Selector Lists */
+table.table > tbody > tr:hover td,
+table.table > tbody > tr:hover th {
+  background-color: #ffffb5 !important;
+}
+
+.table > tbody > tr.danger > td,
+.table > tbody > tr.danger > th,
+.table > tbody > tr > td.danger,
+.table > tbody > tr > th.danger,
+.table > tfoot > tr.danger > td,
+.table > tfoot > tr.danger > th,
+.table > tfoot > tr > td.danger,
+.table > tfoot > tr > th.danger,
+.table > thead > tr.danger > td,
+.table > thead > tr.danger > th,
+.table > thead > tr > td.danger,
+.table > thead > tr > th.danger {
+  background-color: #dff0d8;
+}
+
+/* Type Selectors */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  position: sticky;
+  background-color: white;
+  z-index: 2;
+  top: 0;
+}
+
+button img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+button span {
+  display: none;
+}
+
+/* Type with Attribute Selectors */
+input[type="text"]:hover {
+  background: #ffffb5;
+}
+
+textarea:not([id="custNotesText"]):hover {
+  background: #ffffb5;
+}
+
+/* Class Selectors */
+.scrollable {
+  height: calc(85vh - 200px);
+  overflow-y: scroll;
+  border-bottom: 1px solid #ddd;
+}
+
+.headerSortDown:after,
+.headerSortUp:after {
+  content: " ";
+  position: relative;
+  left: 10px;
+  border: 8px solid transparent;
+}
+
+.headerSortDown:after {
+  top: 10px;
+  border-top-color: silver;
+}
+
+.headerSortUp:after {
+  bottom: 15px;
+  border-bottom-color: silver;
+}
+
+.headerSortDown,
+.headerSortUp {
+  padding-right: 10px;
+}
+
+.copyButton {
+  background-image: url(../img/copy_text.png);
+  background-size: 100%;
+  background-color: transparent;
+  height: 25px;
+  width: 25px;
+  border: none;
+}
+
+.page-header h4 {
+  line-height: 0.5;
+}
+
+.submitNotes,
+.cancelNotes {
+  display: block;
+  float: left;
+}
+
+/* ID Selectors */
+#overlay {
+  display: none; /* This make it initially hidden */
+  position: fixed; /* This makes it so it says in a fixed position even if they scroll around */
+  left: 0px; /* This positions the element to the left most position */
+  top: 0px; /* This positions the elment to the top most position */
+  width: 100%; /* This makes the element take up 100% of the parents width */
+  height: 100%; /* This makes the element take up 100% of the parents height */
+  background: #000; /* Give it a black background */
+  opacity: 0.5; /* Change the opacity to 50% so that is see through */
+  z-index: 99999; /* Change the z-index so it will be above everything else */
+}
+
+#popup {
+  display: none;
+  position: fixed;
+  left: 50%; /* left and top here position top left page */
+  top: 50%; /* of the element to the center of the */
+  width: 600px; /* Set the popup to have a specific width */
+  height: 300px; /* Set the popup to have a specific height */
+  margin-top: -225px; /* To get the popup to center correctly we need */
+  margin-left: -300px; /* To displace the the top/left margins by half of the width/height */
+  background: transparent; /* Background of white */
+  border: 0px; /* And give it a border */
+  z-index: 100000; /* Set z-index to 1 more than that of the overlay so the popup is over the overlay */
+}
+
+#myInput {
+  background-image: url("../img/search.png"); /* Add a search icon to input */
+  background-position: 10px 5px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  background-size: 21px 21px;
+  width: 100%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+  box-sizing: border-box;
+  position: sticky;
+}
+
+#myInput:hover {
+  background: #ffffb5;
+  background-image: url("../img/search.png"); /* Add a search icon to input */
+  background-position: 10px 5px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  background-size: 21px 21px;
+
+  width: 100%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
+
+#custDeleteNew {
+  background-image: url(../img/delete.png);
+  background-size: 100%;
+  background-color: transparent;
+  height: 25px;
+  width: 25px;
+  border: none;
+}
+
+#custDelete {
+  background-image: url(../img/delete.png);
+  background-size: 100%;
+  background-color: transparent;
+  height: 25px;
+  width: 25px;
+  border: none;
+}
+
+#custNotes {
+  background-image: url(../img/notes.png);
+  background-size: 100%;
+  background-color: transparent;
+  height: 25px;
+  width: 25px;
+  border: none;
+}
+
+#custNotesText {
+  display: block;
+  width: 90%;
+  resize: none;
+}
+
+#mailBodyText {
+  display: inline-block;
+  width: 100%;
+  resize: none;
+}
+
+#sort_first_name:hover {
+  cursor: pointer;
+  background: #e0e0de;
+}
+
+#sort_last_name:hover {
+  cursor: pointer;
+  background: #e0e0de;
+}
+
+#sort_email:hover {
+  cursor: pointer;
+  background: #e0e0de;
+}
+
+#sort_phone:hover {
+  cursor: pointer;
+  background: #e0e0de;
+}
+
+#sort_created:hover {
+  cursor: pointer;
+  background: #e0e0de;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+  /* Class Selectors */
+  .scrollable {
+    height: calc(97vh);
+    overflow-y: scroll;
+    border-bottom: 1px solid #ddd;
+  }
+
+  #custDeleteNew {
+    background-image: url(../img/delete.png);
+    background-size: 100%;
+    background-color: transparent;
+    height: 29px;
+    width: 29px;
+    border: none;
+  }
+  
+  #custDelete {
+    background-image: url(../img/delete.png);
+    background-size: 100%;
+    background-color: transparent;
+    height: 29px;
+    width: 29px;
+    border: none;
+  }
+  
+  #custNotes {
+    background-image: url(../img/notes.png);
+    background-size: 100%;
+    background-color: transparent;
+    height: 29px;
+    width: 29px;
+    border: none;
+  }
+}

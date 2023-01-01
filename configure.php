@@ -56,7 +56,7 @@ include("header.php");;
 			<label for="fname"><img src="img/config/config_phone.png" alt="links" width="25" height="25" /> Company Contact Phone:</label><br>
 			<label style="font-size: 1rem;color: gray">This will be the Phone Number used in the email template</label><br>
 			<input class="form-control rounded-0" type="text" id="comp_phone" name="comp_phone" style="width: 400px;" placeholder="+1 (202) 555-0176" value="<?php echo $company['comp_phone']; ?>"><br>
-			<label for="fname"><img src="img/config/config_email.png" alt="links" width="25" height="25" /> Company Contact Email Address:</label><br>
+			<label for="fname"><img src="img/config/config_email.png" alt="links" width="25" height="25" /> Company Contact Email:</label><br>
 			<label style="font-size: 1rem;color: gray">This will be the Email Address your Customers will be able to contact you with, also used in the email template</label><br>
 			<input class="form-control rounded-0" type="text" id="comp_email" name="comp_email" style="width: 400px;" placeholder="noreply@company.com" value="<?php echo $company['comp_email']; ?>"><br>
 			<label for="fname"><img src="img/config/config_google_places.png" alt="links" width="25" height="25" /> Google Business Place ID:</label><br>

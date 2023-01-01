@@ -73,7 +73,7 @@ A basic CRM Web Application with Google Business Review email request capabiliti
 Install with **Homebrew**:
 
 ```bash
-  brew tap scottgriv/palm-tree
+  brew tap scottgriv/palm-tree https://github.com/scottgriv/Palm-Tree
 ```
 
 ## Built using: 

@@ -3,7 +3,7 @@
 
 # Palm Tree
 
- A basic CRM Web Application with Google Business Review email request capabilities.
+A basic CRM Web Application with Google Business Review email request capabilities.
 
  * Keep track of your Customers in a digital format - ditch the pen and paper!
  * Send marketing emails out, including emails requesting Google Business Reviews!

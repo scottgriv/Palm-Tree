@@ -1,6 +1,5 @@
 # Palm Tree
 ![Logo](https://imgur.com/J7ApAiV.png)
-
 #
 
 Palm Tree is a web based CRM application with Google Business Review email request capabilities.

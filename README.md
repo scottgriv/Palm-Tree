@@ -1,9 +1,9 @@
-
-![Logo](https://imgur.com/wjRO1Pm.png)
-
 # Palm Tree
+![Logo](https://imgur.com/J7ApAiV.png)
 
-A basic CRM Web Application with Google Business Review email request capabilities.
+#
+
+Palm Tree is a web based CRM application with Google Business Review email request capabilities.
 
  * Keep track of your Customers in a digital format - ditch the pen and paper!
  * Send marketing emails out, including emails requesting Google Business Reviews!
@@ -12,6 +12,8 @@ A basic CRM Web Application with Google Business Review email request capabiliti
 ## Fully Interactive Table
 
 ![App Screenshot](https://imgur.com/ec4MeEY.jpg)
+
+*Note: Data privacy is important to me, which is why the above data is fake data.*
 
 * **CRUD-enabled:**
     * Create Customers
@@ -80,8 +82,13 @@ Install with **Homebrew**:
 * PHP v8.1.6
 * jQuery v2.1.3 
 * Bootstrap v3.3.5
-* MariaDB 10.4.21
-* XAMPP 8.1.6
+* MariaDB v10.4.21
+* XAMPP v8.1.6
+
+## Dependencies: 
+
+* [jQuery-Tabledit v1.2.3](https://github.com/markcell/jquery-tabledit)
+* [PHPMailer v6.7.1](https://github.com/PHPMailer/PHPMailer/tree/5.2-stable)
 
 ## Quick Start
 

@@ -41,7 +41,7 @@ CREATE TABLE `about` (
 
 LOCK TABLES `about` WRITE;
 /*!40000 ALTER TABLE `about` DISABLE KEYS */;
-INSERT INTO `about` VALUES (1,'Scott Grivner','scott.grivner@gmail.com','www.scottgrivner.com','1.0.0','MIT');
+INSERT INTO `about` VALUES (1,'Scott Grivner','scott.grivner@gmail.com','https://www.scottgrivner.dev','1.0.0','MIT');
 /*!40000 ALTER TABLE `about` ENABLE KEYS */;
 UNLOCK TABLES;
 

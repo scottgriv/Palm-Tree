@@ -102,3 +102,12 @@ Install with **Homebrew**:
 7. Add Customers.
 
 * You're ready to go!  
+
+## License
+**Pam Tree** is released under the MIT license. [See LICENSE](https://github.com/scottgriv/Palm-Tree/blob/main/LICENSE) for details.
+
+## Credit
+**Author:** Scott Grivner <br>
+**Email:** scott.grivner@gmail.com <br>
+**Website:** [scottgrivner.dev](https://www.scottgriv.dev) <br>
+**Reference:** [Main Branch](https://github.com/scottgriv/Palm-Tree)

@@ -81,8 +81,8 @@ Install with **Homebrew**:
 * PHP v8.1.6
 * jQuery v2.1.3 
 * Bootstrap v3.3.5
-* MariaDB v10.4.21
-* XAMPP v8.1.6
+* MySQL v8.0.31
+* Docker v20.10.21
 
 ## Dependencies: 
 
@@ -90,16 +90,6 @@ Install with **Homebrew**:
 * [PHPMailer v6.7.1](https://github.com/PHPMailer/PHPMailer/tree/5.2-stable)
 
 ## Quick Start
-
-1. I'd recommend using the XAMPP stack to run this application (although, its not required).
-    * Download the latest version of **XAMPP** [here](https://www.apachefriends.org/download.html).
-    * XAMPP comes a Apache HTTP Server, PHP, and a MariaDB database stack already installed - everything you need to get Palm Tree up and running.
-2. Start the XAMPP MySQL and Apache Web Server Services.
-3. Import the provided database shell located in `Palm-Tree/sql/palm_tree.sql` into your MySQL database.
-4. Place Palm-Tree in the htdocs folder and reach it using your machines IP address i.e. `http://127.0.0.1/Palm-Tree` or ``http://localhost/Palm-Tree``.
-5. Upload the provided email templates in ``Palm-Tree/templates`` in the *Email Template* menu (adjust it according to your needs or create your own).
-6. Configure your Email Template and Business.
-7. Add Customers.
 
 * You're ready to go!  
 

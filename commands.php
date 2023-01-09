@@ -180,7 +180,7 @@ switch ($_POST["command"]) {
 		$mail_cc = $_POST['mail_cc'];
 		$mail_bcc = $_POST['mail_bcc'];
 		$mail_subject = $_POST['mail_subject'];
-		$mail_body = htmlspecialchars($_POST['mail_body']);
+		$mail_body = htmlspecialchars($_POST['mail_body'] ?? '');
 
 		if (empty($mail_from_password)) {
 			$encrypted_password = NULL;

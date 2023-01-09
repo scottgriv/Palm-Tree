@@ -152,7 +152,7 @@ function sendEmail($cust_id, $flag, $type)
 
       // Set Email Subject and Body
       $email_subject = $email_build['mail_subject'];
-      $email_body = htmlspecialchars_decode($email_build['mail_body']);
+      $email_body = htmlspecialchars_decode($email_build['mail_body'] ?? '');
 
       // Replace Template Variables with Database Values
       foreach ($variables as $key => $value) {

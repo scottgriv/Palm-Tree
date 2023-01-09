@@ -60,7 +60,7 @@ include("encryption.php");
 			<label style="font-size: 1rem;color: gray">This will be the Body of your Email</label><br>
 			<label style="font-size: 1rem;color: gray">You can save your HTML template directly in this box</label><br>
 			<label style="font-size: 1rem;color: gray">Depending on where this software sits, you may need to host email images using an outside source like <a target="_blank" rel="noopener noreferrer" href="https://imgur.com/">imgur.com</a> for the images to render properly in the Email</label><br>
-			<textarea id="mail_body" class="mailBodyText" name="mail_body" rows="20" cols="52" style="text-align: left;" placeholder="<!DOCTYPE html><br><html><br><body><br><p>You can use HTML for a more professional, responsive email.</p><p>Paste the entire HTML message here.</p></body></html>" data-mail-id="<?php echo $mail['mail_id']; ?>"><?php echo htmlspecialchars_decode($mail['mail_body']); ?></textarea><br>
+			<textarea id="mail_body" class="mailBodyText" name="mail_body" rows="20" cols="52" style="text-align: left;" placeholder="<!DOCTYPE html><br><html><br><body><br><p>You can use HTML for a more professional, responsive email.</p><p>Paste the entire HTML message here.</p></body></html>" data-mail-id="<?php echo $mail['mail_id']; ?>"><?php echo htmlspecialchars_decode($mail['mail_body'] ?? ''); ?></textarea><br>
 		<?php } ?>
 		<br>
 		<button type="submit" class="btn btn-default read-more" style="background:#000081;color:white;" name="command" value="updateEmailTemplate">Update Email Template</button>

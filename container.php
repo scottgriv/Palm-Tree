@@ -21,13 +21,13 @@
   <div role="navigation" class="navbar navbar-default navbar-static-top">
     <div class="container">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="http://<?php echo $hostIP; ?>/Palm-Tree/customers.php">Customers</a></li>
+        <li class="active"><a href="http://<?php echo $hostIP; ?>/customers.php">Customers</a></li>
       </ul>
       <ul class="nav navbar-nav">
-        <li><a href="http://<?php echo $hostIP; ?>/Palm-Tree/email.php">Email</a></li>
+        <li><a href="http://<?php echo $hostIP; ?>/email.php">Email</a></li>
       </ul>
       <ul class="nav navbar-nav">
-        <li><a href="http://<?php echo $hostIP; ?>/Palm-Tree/configure.php">Configure</a></li>
+        <li><a href="http://<?php echo $hostIP; ?>/configure.php">Configure</a></li>
       </ul>
       <?php
       // Get the Google Business URL for the Google Business navigation button

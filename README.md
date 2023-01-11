@@ -102,7 +102,7 @@ Palm Tree is a web based CRM application with Google Business Review email reque
     ```bash
         docker-compose up
     ```
-6. This will build the **Docker Containers** and you shold find your application running under *port 80*.
+6. This will build the **Docker Containers** and you should find your application running under *port 80*.
     - Navigate to: ```http://localhost/index.php```
 
 * You're ready to go! You should now be able to acccess **Palm Tree**.

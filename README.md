@@ -98,7 +98,7 @@ Palm Tree is a web based CRM application with Google Business Review email reque
     ```bash
         cd Desktop/Palm-Tree-main
     ```
-5. Once you're in the **Palm Tree** directory, run ```docker-compose```:
+5. Once you're in the **Palm Tree** directory, run ```docker-compose``` (this step may take a while to download all of the necessary images):
     ```bash
         docker-compose up
     ```

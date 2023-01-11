@@ -69,14 +69,6 @@ Palm Tree is a web based CRM application with Google Business Review email reque
     * Social Media Email Hyperlinks:
         * Google, Facebook, Twitter, LinkedIn, Instagram, YouTube, Amazon, Pinterest, Etsy, and Shopify.
 
-## Installation
-
-Install with **Homebrew**:
-
-```bash
-  brew tap scottgriv/palm-tree https://github.com/scottgriv/Palm-Tree
-```
-
 ## Built using: 
 * PHP v8.1.6
 * jQuery v2.1.3 
@@ -90,8 +82,31 @@ Install with **Homebrew**:
 * [PHPMailer v6.7.1](https://github.com/PHPMailer/PHPMailer/tree/5.2-stable)
 
 ## Quick Start
+1. Download Docker [Here](https://docs.docker.com/get-docker/)
+2. Download **Palm Tree**:
+    - Download with **Git**:
+    ```bash
+        git clone https://github.com/scottgriv/palm-tree
+    ```
+    - Download with **Homebrew**:
+    ```bash
+        brew tap scottgriv/palm-tree https://github.com/scottgriv/Palm-Tree
+    ```
+    - Download the **Zip File**: Click [Here](https://github.com/scottgriv/Palm-Tree/archive/refs/heads/main.zip).
+3. Make sure **Docker** is up and running.
+4. Change your directory via the command line to your **Palm Tree** directory:
+    ```bash
+        cd Desktop/Palm-Tree-main
+    ```
+5. Once you're in the **Palm Tree** directory, run ```docker-compose```:
+    ```bash
+        docker-compose up
+    ```
+6. This will build the **Docker Containers** and you shold find your application running under *port 80*.
+    - Navigate to: ```http://localhost/index.php```
 
-* You're ready to go!  
+* You're ready to go! You should now be able to acccess **Palm Tree**.
+* Feel free to use the provided email templates in the ``/templates`` directory under the **Email** menu, **Email Body**.
 
 ## License
 **Pam Tree** is released under the MIT license. [See LICENSE](https://github.com/scottgriv/Palm-Tree/blob/main/LICENSE) for details.

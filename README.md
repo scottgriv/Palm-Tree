@@ -82,7 +82,7 @@ Palm Tree is a web based CRM application with Google Business Review email reque
 * [PHPMailer v6.7.1](https://github.com/PHPMailer/PHPMailer/tree/5.2-stable)
 
 ## Quick Start
-1. Download Docker [Here](https://docs.docker.com/get-docker/)
+1. Download Docker [Here](https://docs.docker.com/get-docker/).
 2. Download **Palm Tree**:
     - Download with **Git**:
     ```bash
@@ -92,7 +92,7 @@ Palm Tree is a web based CRM application with Google Business Review email reque
     ```bash
         brew tap scottgriv/palm-tree https://github.com/scottgriv/Palm-Tree
     ```
-    - Download the **Zip File**: Click [Here](https://github.com/scottgriv/Palm-Tree/archive/refs/heads/main.zip).
+    - Download the **Zip File** [Here](https://github.com/scottgriv/Palm-Tree/archive/refs/heads/main.zip).
 3. Make sure **Docker** is up and running.
 4. Change your directory via the command line to your **Palm Tree** directory:
     ```bash

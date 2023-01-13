@@ -1,5 +1,5 @@
 # Palm Tree
-![Logo](https://imgur.com/J7ApAiV.png)
+![App Logo](images/App_Logo.png)
 #
 
 Palm Tree is a web based CRM application with Google Business Review email request capabilities.
@@ -10,7 +10,7 @@ Palm Tree is a web based CRM application with Google Business Review email reque
 
 ## Fully Interactive Table
 
-![App Screenshot](https://imgur.com/ec4MeEY.jpg)
+![Customers Menu](images/Demo_1.png)
 
 *Note: Data privacy is important to me, which is why the above data is fake data.*
 
@@ -38,7 +38,7 @@ Palm Tree is a web based CRM application with Google Business Review email reque
 
 ## Custom Email Template
 
-![App Screenshot](https://imgur.com/BifS2gK.jpg)
+![Email Menu](images/Demo_2.png)
 
 * Configure your Email Server to send Business emails using your own plain-text or HTML email template (Gmail Supported).
 * Use variables from a predefined list to send curated emails to your Customers in the **Subject** and **Body**:
@@ -51,10 +51,11 @@ Palm Tree is a web based CRM application with Google Business Review email reque
 
 * **CC** & **BCC** capabilties.
 * Send a mass email to **ALL** of your customers at once.
+* Create an account on **[imgur](https://imgur.com/)** to host photos used in your email template.
 
 ## Configure Your Business
 
-![App Screenshot](https://imgur.com/2TbykTe.jpg)
+![Configure Menu](images/Demo_3.png)
 
 * Upload and display your Company Logo.
 * Display your Company Title.
@@ -69,20 +70,25 @@ Palm Tree is a web based CRM application with Google Business Review email reque
     * Social Media Email Hyperlinks:
         * Google, Facebook, Twitter, LinkedIn, Instagram, YouTube, Amazon, Pinterest, Etsy, and Shopify.
 
+## Send Emails to your Customers
+
+![Email Example](images/Demo_4.png)
+
 ## Built using: 
 * PHP v8.1.6
 * jQuery v2.1.3 
 * Bootstrap v3.3.5
 * MySQL v8.0.31
 * Docker v20.10.21
+* XAMPP 8.1.6 *(Alternative to Docker - Download [Here](https://www.apachefriends.org/download.html))*
 
-## Dependencies: 
+## Dependencies (Included): 
 
 * [jQuery-Tabledit v1.2.3](https://github.com/markcell/jquery-tabledit)
 * [PHPMailer v6.7.1](https://github.com/PHPMailer/PHPMailer/tree/5.2-stable)
 
-## Quick Start
-1. Download Docker [Here](https://docs.docker.com/get-docker/).
+## Quick Start *(Using Docker - Recommended)*
+1. Download **Docker** [Here](https://docs.docker.com/get-docker/).
 2. Download **Palm Tree**:
     - Download with **Git**:
     ```bash
@@ -94,6 +100,7 @@ Palm Tree is a web based CRM application with Google Business Review email reque
     ```
     - Download the **Zip File** [Here](https://github.com/scottgriv/Palm-Tree/archive/refs/heads/main.zip).
 3. Make sure **Docker** is up and running.
+    - Make sure you follow the **System Requirements** under your preferred Operating System.
 4. Change your directory via the command line to your **Palm Tree** directory:
     ```bash
         cd Desktop/Palm-Tree-main
@@ -109,7 +116,7 @@ Palm Tree is a web based CRM application with Google Business Review email reque
 * Feel free to use the provided email templates in the ``/templates`` directory under the **Email** menu, **Email Body**.
 
 ## License
-**Pam Tree** is released under the MIT license. [See LICENSE](https://github.com/scottgriv/Palm-Tree/blob/main/LICENSE) for details.
+**Pam Tree** is released under the MIT license. [See LICENSE](LICENSE) for details.
 
 ## Credit
 **Author:** Scott Grivner <br>

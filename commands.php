@@ -73,6 +73,9 @@ switch ($_POST["command"]) {
 		// Update Company
 	case $case = "updateCompany";
 
+		// Redirect Page back to the Home Menu	
+		header("Location: customers.php");
+
 		$comp_title = $_POST['comp_title'];
 		$comp_subtitle = $_POST['comp_subtitle'];
 		$comp_owner = $_POST['comp_owner'];
@@ -164,15 +167,15 @@ switch ($_POST["command"]) {
 
 		mysqli_stmt_execute($stmnt);
 
-		// Redirect Page back to the Home Menu	
-		header("Location: customers.php");
-
 		die();
 
 		break;
 
 		// Update Email Template
 	case $case = "updateEmailTemplate";
+
+		// Redirect Page back to the Home Menu
+		header("Location: customers.php");
 
 		$mail_smtp = $_POST['mail_smtp'];
 		$mail_from = $_POST['mail_from'];
@@ -205,8 +208,6 @@ switch ($_POST["command"]) {
 
 		mysqli_stmt_execute($stmnt);
 
-		// Redirect Page back to the Home Menu
-		header("Location: customers.php");
 		die();
 
 		break;

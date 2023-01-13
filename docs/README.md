@@ -101,11 +101,12 @@ Palm Tree is a web based CRM application with Google Business Review email reque
     - Download the **Zip File** [Here](https://github.com/scottgriv/Palm-Tree/archive/refs/heads/main.zip).
 3. Make sure **Docker** is up and running.
     - Make sure you follow the **System Requirements** under your preferred Operating System.
-4. Change your directory via the command line to your **Palm Tree** directory:
+4. Launch your CLI (Command Prompt on Windows/Terminal on Mac).
+4. Change the directory using your CLI to your **Palm Tree** directory:
     ```bash
-        cd Desktop/Palm-Tree-main
+        cd Desktop/Palm-Tree
     ```
-5. Once you're in the **Palm Tree** directory, run ```docker-compose``` (this step may take a while to download all of the necessary images):
+5. Once you're in the **Palm Tree** directory, run the ```Docker Compose``` command (**NOTE:** this step may take a while to download all of the necessary images):
     ```bash
         docker-compose up
     ```

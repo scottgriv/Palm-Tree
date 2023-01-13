@@ -1,5 +1,5 @@
 # Palm Tree
-![App Logo](images/App_Logo.png)
+![App Logo](img/github/App_Logo.png)
 #
 
 Palm Tree is a web based CRM application with Google Business Review email request capabilities.
@@ -10,7 +10,7 @@ Palm Tree is a web based CRM application with Google Business Review email reque
 
 ## Fully Interactive Table
 
-![Customers Menu](images/Demo_1.png)
+![Customers Menu](img/github/Demo_1.png)
 
 *Note: Data privacy is important to me, which is why the above data is fake data.*
 
@@ -38,7 +38,7 @@ Palm Tree is a web based CRM application with Google Business Review email reque
 
 ## Custom Email Template
 
-![Email Menu](images/Demo_2.png)
+![Email Menu](img/github/Demo_2.png)
 
 * Configure your Email Server to send Business emails using your own plain-text or HTML email template (Gmail Supported).
 * Use variables from a predefined list to send curated emails to your Customers in the **Subject** and **Body**:
@@ -55,7 +55,7 @@ Palm Tree is a web based CRM application with Google Business Review email reque
 
 ## Configure Your Business
 
-![Configure Menu](images/Demo_3.png)
+![Configure Menu](img/github/Demo_3.png)
 
 * Upload and display your Company Logo.
 * Display your Company Title.
@@ -72,7 +72,7 @@ Palm Tree is a web based CRM application with Google Business Review email reque
 
 ## Send Emails to your Customers
 
-![Email Example](images/Demo_4.png)
+![Email Example](img/github/Demo_4.png)
 
 ## Built using: 
 * PHP v8.1.6

@@ -22,6 +22,10 @@ function copy_to_clipboard(event, element) {
   window.alert("Text copied to clipboard");
 }
 
+function resetOriginalData() {
+  originalData = $("#data_table tbody tr").get();
+}
+
 //Search for Customers
 const searchCustomers = () => {
   // Check if Counter is NOT Null
@@ -585,10 +589,6 @@ $(document).ready(function () {
     cust_notes = null;
     cust_id = null;
   });
-
-  function resetOriginalData() {
-    originalData = $("#data_table tbody tr").get();
-  }
 
   $("#insertRow").on("click", function (event) {
     if (counter != null) {

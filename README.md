@@ -118,7 +118,7 @@ Palm Tree is a web based CRM application with Google Business Review email reque
 * **NOTE:** You may need to allow the *port* you're using to send your emails in your *Firewall Settings* (defined in the `send_email.php` file - default `port 465`). Also, ensure your anti-virus software is not blocking **Palm Tree** from sending emails as well.
 
 ## License
-**Pam Tree** is released under the MIT license. [See LICENSE](LICENSE) for details.
+**Pam Tree** is released under the GNU General Public License v3.0 License. [See LICENSE](LICENSE) for details.
 
 ## Credit
 **Author:** Scott Grivner <br>

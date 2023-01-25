@@ -1,6 +1,9 @@
 # Palm Tree
 ![App Logo](docs/images/demo_banner.png)
-#
+[![Email](https://img.shields.io/badge/email-contact_me-9cf?style=for-the-badge&logo=gmail)](mailto:scott.grivner@gmail.com)
+[![BuyMeACoffee](https://img.shields.io/badge/donate-buy_me_a_coffee-yellow?style=for-the-badge&logo=buymeacoffee&color=ffdd00)](https://www.buymeacoffee.com/scottgriv)
+
+------- 
 
 Palm Tree is a web based CRM application with Google Business Review email request capabilities.
 

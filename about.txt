@@ -1,0 +1,6 @@
+Author: Scott Grivner
+Email: scott.grivner@gmail.com
+Website: https://www.scottgrivner.dev
+Main Branch: https://github.com/scottgriv/Palm-Tree
+
+Copyright (C) 2023 Scott Grivner

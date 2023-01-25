@@ -123,6 +123,10 @@ Palm Tree is a web based CRM application with Google Business Review email reque
 ## Credit
 **Author:** Scott Grivner <br>
 **Email:** scott.grivner@gmail.com <br>
-**Website:** [scottgrivner.dev](https://www.scottgriv.dev) <br>
+**Website:** [scottgrivner.dev](https://www.scottgrivner.dev) <br>
 **Reference:** [Main Branch](https://github.com/scottgriv/Palm-Tree) <br>
-<img src="./docs/images/demo_icon.png" width="5%" height="5%"/>
+<div align="center">
+    <a href="https://github.com/scottgriv/Palm-Tree" target="_blank">
+        <img src="./docs/images/demo_app_icon.png"/>
+    </a>
+</div>

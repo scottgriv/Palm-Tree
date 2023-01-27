@@ -29,8 +29,6 @@ CREATE TABLE `about` (
   `about_developer` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'About Author',
   `about_contact` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'About Contact',
   `about_website` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'About Website',
-  `about_version` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'About Version',
-  `about_license` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'About License',
   PRIMARY KEY (`about_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -41,7 +39,7 @@ CREATE TABLE `about` (
 
 LOCK TABLES `about` WRITE;
 /*!40000 ALTER TABLE `about` DISABLE KEYS */;
-INSERT INTO `about` VALUES (1,'Scott Grivner','scott.grivner@gmail.com','https://www.scottgrivner.dev','1','MIT');
+INSERT INTO `about` VALUES (1,'Scott Grivner','scott.grivner@gmail.com','https://www.scottgrivner.dev');
 /*!40000 ALTER TABLE `about` ENABLE KEYS */;
 UNLOCK TABLES;
 

@@ -11,13 +11,30 @@
  * Send marketing emails out, including emails requesting Google Business Reviews!
     * Directly open a Review window on your Google Business page with a click of a button within the email.
 
+-------
+
+## Table of Contents
+
+- [Fully Interactive Table](#background-story)
+- [CRUD-Enabled](#definitions)
+- [Custom Email Template](#limitations)
+- [Configure Your Business](#features)
+- [Send Emails to Your Customers](#programming-languages)
+- [Built Using](#getting-started)
+- [What's Inside?](#whats-inside)
+- [Getting Started](#project)
+- [License](#license)
+- [Credit](#credit)
+
+-------
+
 ## Fully Interactive Table
 
-![Customers Menu](docs/images/demo_1.png)
+![Customer Menu](docs/images/demo_1.png)
 
 *Note: Data privacy is important to me, which is why the above data is fake data.*
 
-* **CRUD-enabled:**
+* **CRUD-Enabled:**
     * Create Customers
     * Update Customers
     * Delete Customers
@@ -73,11 +90,11 @@
     * Social Media Email Hyperlinks:
         * Google, Facebook, Twitter, LinkedIn, Instagram, YouTube, Amazon, Pinterest, Etsy, and Shopify.
 
-## Send Emails to your Customers
+## Send Emails to Your Customers
 
 ![Email Example](docs/images/demo_4.png)
 
-## Built using: 
+## Built Using: 
 * PHP v8.1.6
 * jQuery v2.1.3 
 * Bootstrap v3.3.5
@@ -85,7 +102,7 @@
 * Docker v20.10.21 *(Recommended)*
 * XAMPP 8.1.6 *(Alternative)*
 
-## What's inside?
+## What's Inside?
 A quick look at the top-level files and directories in this project.
 
     .
@@ -166,7 +183,7 @@ A quick look at the top-level files and directories in this project.
 26. **`table_edit.php`**: A PHP file used to connect the `jquery.tabledit.js` with the application.
 27. **`VERSION`**: A file containing the current application version number.
 
-## Quick Start:
+## Getting Started:
 
 ***Download the Application:***
 

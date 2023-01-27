@@ -53,7 +53,9 @@
     * Email
     * Phone
 * Check the **Send Email** box to send an email to the Customer.
-* Mobile capabilities with Bootstrap.
+* Mobile capabilities with Bootstrap:
+
+![Customer Menu Mobile](docs/images/demo_5.png)
 
 ## Custom Email Template
 
@@ -220,8 +222,15 @@ A quick look at the top-level files and directories in this project.
 3. Start the `MySQL Database` and `Apache Web Server` services. Optionally, you can install these as a service if you're  using windows so the web server automatically starts and serves **Palm Tree** if the PC ever restarts or shuts down and comes back up:
     > First step to install Apache service, run XAMPP Control Panel as Administrator, then click the Apache service button located on the left side of Apache components, click next and “Click Yes to Install the Apache Service” window will open, then click Yes to continue.
 4. Go to the `phpMyAdmin` portal and import the SQL database script `palm_tree.sql` located in the `sql` folder.
+- **NOTE:** The below two changes are to correct the application from the default Docker install above.
 5. Update the `sql/config.ini` file changing `db_host = db` to `db_host = localhost`.
-6. Go to your web browser and navigate to the URL: `http://localhost/Palm-Tree` and you should be redirected to the main application page.
+6. Update the `container` class menu links in the `container.php` file From/To: 
+     - From: `/customers.php` To: `/Palm-Tree/customers.php`
+     - From: `/configure.php` To: `/Palm-Tree/configure.php`
+     - From: `/email.php` To: `/Palm-Tree/email.php`
+- Alternatively, you can update the `httpd.conf` file to set your default index page for your localhost to the `Palm-Tree` directory.
+
+7. Go to your web browser and navigate to the URL: `http://localhost/Palm-Tree` and you should be redirected to the main application page.
 
 ***Closing:***
 

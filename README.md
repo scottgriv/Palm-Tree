@@ -15,20 +15,19 @@
 
 ## Table of Contents
 
-- [Fully Interactive Table](#background-story)
-- [CRUD-Enabled](#definitions)
-- [Custom Email Template](#limitations)
-- [Configure Your Business](#features)
-- [Send Emails to Your Customers](#programming-languages)
-- [Built Using](#getting-started)
+- [Fully Interactive Customer Table](#fully-interactive-customer-table)
+- [Custom Email Template](#custom-email-template)
+- [Configure Your Business](#configure-your-business)
+- [Send Emails to Your Customers](#send-emails-to-your-customers)
+- [Built Using](#built-using)
 - [What's Inside?](#whats-inside)
-- [Getting Started](#project)
+- [Getting Started](#getting-started)
 - [License](#license)
 - [Credit](#credit)
 
 -------
 
-## Fully Interactive Table
+## Fully Interactive Customer Table
 
 ![Customer Menu](docs/images/demo_1.png)
 

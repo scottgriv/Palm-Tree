@@ -93,7 +93,7 @@
 
 ![Email Example](docs/images/demo_4.png)
 
-## Built Using: 
+## Built Using
 * PHP v8.1.6
 * jQuery v2.1.3 
 * Bootstrap v3.3.5
@@ -182,7 +182,7 @@ A quick look at the top-level files and directories in this project.
 26. **`table_edit.php`**: A PHP file used to connect the `jquery.tabledit.js` with the application.
 27. **`VERSION`**: A file containing the current application version number.
 
-## Getting Started:
+## Getting Started
 
 ***Download the Application:***
 

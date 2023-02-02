@@ -1,5 +1,7 @@
 # Palm Tree
 ![App Logo](docs/images/demo_banner.png)
+[![PHP](https://img.shields.io/badge/PHP-8.1.6-blueviolet?style=for-the-badge&logo=php)](https://www.php.net/ChangeLog-8.php#8.1.6)
+[![MySQL](https://img.shields.io/badge/MySQL-8.0.31-blue?style=for-the-badge&logo=mysql)](https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-31.html)
 [![Email](https://img.shields.io/badge/email-contact_me-9cf?style=for-the-badge&logo=gmail)](mailto:scott.grivner@gmail.com)
 [![BuyMeACoffee](https://img.shields.io/badge/donate-buy_me_a_coffee-yellow?style=for-the-badge&logo=buymeacoffee&color=ffdd00)](https://www.buymeacoffee.com/scottgriv)
 
@@ -100,8 +102,8 @@
 * jQuery v2.1.3 
 * Bootstrap v3.3.5
 * MySQL v8.0.31
-* Docker v20.10.21 *(Recommended)*
-* XAMPP 8.1.6 *(Alternative)*
+* Docker v20.10.21 *(Recommended Deploy)*
+* XAMPP v8.1.6 *(Alternative Deploy)*
 
 ## What's Inside?
 A quick look at the top-level files and directories in this project.

@@ -36,9 +36,10 @@
 *Note: Data privacy is important to me, which is why the above data is fake data.*
 
 * **CRUD-Enabled:**
-    * Create Customers
-    * Update Customers
-    * Delete Customers
+    - [x] Create Customer Information
+    - [x] Read Customer Information
+    - [x] Update Customer Information
+    - [x] Delete Customer Information
 * Export table to a .csv file.
 * Scroll up, down, and refresh the table easily using the provided buttons.
 * Highlighted editable fields.

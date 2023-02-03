@@ -10,8 +10,9 @@ var counter; // Counter for New Customer
 var isButtonSubmit = false; // Submit Button from Customer Notes
 var cust_notes; // Customer Notes
 var cust_id; // Customer ID
+var originalData; // Original Table Data Array
 
-// Copy Variables to Clipboard Functi don
+// Copy Variables to Clipboard Function
 function copy_to_clipboard(event, element) {
   event.preventDefault();
   var $temp = $("<input>");
@@ -22,11 +23,13 @@ function copy_to_clipboard(event, element) {
   window.alert("Text copied to clipboard");
 }
 
-function resetOriginalData() {
+// Set Tables Original Data
+// This will reset to the original sorting when adding a new customer after a sort
+function setOriginalData() {
   originalData = $("#data_table tbody tr").get();
 }
 
-//Search for Customers
+// Search for Customers
 const searchCustomers = () => {
   // Check if Counter is NOT Null
   if (counter != null) {
@@ -171,7 +174,7 @@ function send_single_email(box) {
         // Set the hidden field values
         $(box).closest("tr").find(".hiddenFlag").text("Not Sent");
       }
-      resetOriginalData();
+      setOriginalData();
 
       console.log(data);
     },
@@ -223,7 +226,7 @@ function send_mass_email(box) {
       dataType: "HTML",
       success: function (data) {
         alert("Successfully Sent Mass Emails!");
-        resetOriginalData();
+        setOriginalData();
 
         console.log(data);
       },
@@ -263,7 +266,7 @@ function update_email_flags(box) {
         success: function (data) {
           alert("Successfully Removed Send Flags!");
           console.log(data);
-          resetOriginalData();
+          setOriginalData();
         },
         error: function (error) {
           // Handle Error
@@ -281,10 +284,12 @@ function update_email_flags(box) {
 // jQuery Load Document
 $(document).ready(function () {
   // Declare Variables
-  var originalData = $("#data_table tbody tr").get(); // Store Original Table Data
   const scrollable = $(".scrollable"); // Scrollable Div Tag
   const scrollUpButton = $("#scrollUp"); // Scroll Up Button
   const scrollDownButton = $("#scrollDown"); // Scroll Down Button
+
+  // Set Original Data Array
+  setOriginalData();
 
   // Set Customer Date/Time Created to Read Only
   $("#cust_created").prop("readonly", true);
@@ -417,7 +422,7 @@ $(document).ready(function () {
           "&command=updateCustomerNotes",
         dataType: "HTML",
         success: function (data) {
-          resetOriginalData();
+          setOriginalData();
           console.log(data);
         },
         error: function (error) {
@@ -522,22 +527,22 @@ $(document).ready(function () {
             '</span><input class="tabledit-input tabledit-identifier" type="hidden" name="cust_id" value="' +
             json.cust_id.toString() +
             '" disabled=""></td>' +
-            '<td class="tabledit-view-mode" style="cursor: pointer;"><span class="tabledit-span" style="display: inline;">' +
+            '<td class="tabledit-view-mode" style="cursor: pointer;"><span class="tabledit-span">' +
             json.cust_first_name +
             '</span><input class="tabledit-input form-control input-sm" type="text" name="cust_first_name" value="' +
             json.cust_first_name +
             '" style="display: none;" disabled=""></td>' +
-            '<td class="tabledit-view-mode" style="cursor: pointer;"><span class="tabledit-span" style="display: inline;">' +
+            '<td class="tabledit-view-mode" style="cursor: pointer;"><span class="tabledit-span">' +
             json.cust_last_name +
             '</span><input class="tabledit-input form-control input-sm" type="text" name="cust_last_name" value="' +
             json.cust_last_name +
             '" style="display: none;" disabled=""></td>' +
-            '<td class="tabledit-view-mode" style="cursor: pointer;"><span class="tabledit-span" style="display: inline;">' +
+            '<td class="tabledit-view-mode" style="cursor: pointer;"><span class="tabledit-span">' +
             json.cust_email +
             '</span><input class="tabledit-input form-control input-sm" type="text" name="cust_email" value="' +
             json.cust_email +
             '" style="display: none;" disabled=""></td>' +
-            '<td class="tabledit-view-mode" style="cursor: pointer;"><span class="tabledit-span" style="display: inline;">' +
+            '<td class="tabledit-view-mode" style="cursor: pointer;"><span class="tabledit-span">' +
             json.cust_phone +
             '</span><input class="tabledit-input form-control input-sm" type="text" name="cust_phone" value="' +
             json.cust_phone +
@@ -572,10 +577,11 @@ $(document).ready(function () {
 
           $("#data_table").append(newRow);
 
-          //Update the originalData variable with the most current table information.
-          resetOriginalData();
-
           alert("Successfully Created Customer!");
+
+          //Update the originalData variable with the most current table information.
+          setOriginalData();
+
         },
         error: function (jqXHR, textStatus, errorThrown) {
           // Handle Error
@@ -696,7 +702,7 @@ $(document).ready(function () {
         dataType: "HTML",
         success: function (data) {
           alert("Successfully Deleted Customer!");
-          resetOriginalData();
+          setOriginalData();
         },
         error: function (xhr, ajaxOptions, thrownError) {
           var error = JSON.parse(jqXHR.responseText);

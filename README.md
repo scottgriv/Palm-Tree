@@ -31,7 +31,7 @@
 
 ## Fully Interactive Customer Table
 
-![Customer Menu](docs/images/demo_1.png)
+![Customer Menu](docs/images/demo_customers.gif)
 
 *Note: Data privacy is important to me, which is why the above data is fake data.*
 
@@ -58,11 +58,11 @@
 * Check the **Send Email** box to send an email to the Customer.
 * Mobile capabilities with Bootstrap:
 
-![Customer Menu Mobile](docs/images/demo_5.png)
+![Customer Menu Mobile](docs/images/demo_mobile.png)
 
 ## Custom Email Template
 
-![Email Menu](docs/images/demo_2.png)
+![Email Menu](docs/images/demo_email.png)
 
 * Configure your Email Server to send Business emails using your own plain-text or HTML email template (Gmail Supported).
 * Use variables from a predefined list to send curated emails to your Customers in the **Subject** and **Body**:
@@ -79,7 +79,7 @@
 
 ## Configure Your Business
 
-![Configure Menu](docs/images/demo_3.png)
+![Configure Menu](docs/images/demo_configure.png)
 
 * Upload and display your Company Logo.
 * Display your Company Title.
@@ -96,7 +96,7 @@
 
 ## Send Emails to Your Customers
 
-![Email Example](docs/images/demo_4.png)
+![Email Example](docs/images/demo_send_email.png)
 
 ## Built Using
 * PHP v8.1.6

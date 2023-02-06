@@ -24,6 +24,7 @@
 - [Built Using](#built-using)
 - [What's Inside?](#whats-inside)
 - [Getting Started](#getting-started)
+- [Project](#project)
 - [License](#license)
 - [Credit](#credit)
 
@@ -241,8 +242,12 @@ A quick look at the top-level files and directories in this project.
 * Feel free to use the provided email templates in the ``/templates`` directory under the **Email** menu, **Email Body**.
 * **NOTE:** You may need to allow the *port* you're using to send your emails in your *Firewall Settings* (defined in the `send_email.php` file - default `port 465`). Ensure your anti-virus software is not blocking **Palm Tree** from sending out emails as well.
 
+## Project
+
+Please reference the [GitHub Project](https://github.com/users/scottgriv/projects/4) tab inside this Repo to get a good understanding of where I'm currently at with the overall project. Bugs and Enhancements will also be tracked there as well.
+
 ## License
-**Palm Tree** is released under the GNU General Public License v3.0 License. [See LICENSE](LICENSE) for details.
+**Palm Tree** is released under the **GNU General Public License v3.0 License**. [See LICENSE](LICENSE) for details.
 
 ## Credit
 **Author:** Scott Grivner <br>

@@ -224,7 +224,7 @@ A quick look at the top-level files and directories in this project.
 
 ***Using XAMPP (Alternative):***
 
-1. Download [XAMPP](https://www.apachefriends.org/download.html).
+1. Download **XAMPP** [Here](https://www.apachefriends.org/download.html).
 2. Start the `MySQL Database` and `Apache Web Server` services. Optionally, you can install these as a service if you're  using windows so the web server automatically starts and serves **Palm Tree** if the PC ever restarts or shuts down and comes back up:
     > First step to install Apache service, run XAMPP Control Panel as Administrator, then click the Apache service button located on the left side of Apache components, click next and “Click Yes to Install the Apache Service” window will open, then click Yes to continue.
 3. Go to the `phpMyAdmin` portal and import the SQL database script `palm_tree.sql` located in the `sql` folder.

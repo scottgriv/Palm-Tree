@@ -192,7 +192,7 @@ A quick look at the top-level files and directories in this project.
 
 ***Download the Application:***
 
-1. Download **Palm Tree** using one of the methods below:
+1. Download **Palm Tree** directly using one of the methods below:
     - Download with **Git**:
     ```bash
         git clone https://github.com/scottgriv/palm-tree
@@ -203,12 +203,14 @@ A quick look at the top-level files and directories in this project.
     ```
     - Download the **Zip File** [Here](https://github.com/scottgriv/Palm-Tree/archive/refs/heads/main.zip).
 
+2. Host the application using your web server and databases. See the **XAMPP** instructions below on how to do this.
+
 ***Using Docker (Recommended):***
 
-2. Download **Docker** [Here](https://docs.docker.com/get-docker/).
-3. Make sure **Docker** is up and running.
+1. Download **Docker** [Here](https://docs.docker.com/get-docker/).
+2. Make sure **Docker** is up and running.
     - Make sure you follow the **System Requirements** under your preferred Operating System.
-4. Launch your CLI (Command Prompt on Windows/Terminal on Mac).
+3. Launch your CLI (Command Prompt on Windows/Terminal on Mac).
 4. Change the directory using your CLI to your **Palm Tree** directory:
     ```bash
         cd Desktop/Palm-Tree
@@ -222,19 +224,19 @@ A quick look at the top-level files and directories in this project.
 
 ***Using XAMPP (Alternative):***
 
-2. Download [XAMPP](https://www.apachefriends.org/download.html).
-3. Start the `MySQL Database` and `Apache Web Server` services. Optionally, you can install these as a service if you're  using windows so the web server automatically starts and serves **Palm Tree** if the PC ever restarts or shuts down and comes back up:
+1. Download [XAMPP](https://www.apachefriends.org/download.html).
+2. Start the `MySQL Database` and `Apache Web Server` services. Optionally, you can install these as a service if you're  using windows so the web server automatically starts and serves **Palm Tree** if the PC ever restarts or shuts down and comes back up:
     > First step to install Apache service, run XAMPP Control Panel as Administrator, then click the Apache service button located on the left side of Apache components, click next and “Click Yes to Install the Apache Service” window will open, then click Yes to continue.
-4. Go to the `phpMyAdmin` portal and import the SQL database script `palm_tree.sql` located in the `sql` folder.
+3. Go to the `phpMyAdmin` portal and import the SQL database script `palm_tree.sql` located in the `sql` folder.
 - **NOTE:** The below two changes are to correct the application from the default Docker install above.
-5. Update the `sql/config.ini` file changing `db_host = db` to `db_host = localhost`.
-6. Update the `container` class menu links in the `container.php` file From/To: 
+4. Update the `sql/config.ini` file changing `db_host = db` to `db_host = localhost`.
+5. Update the `container` class menu links in the `container.php` file From/To: 
      - From: `/customers.php` To: `/Palm-Tree/customers.php`
      - From: `/configure.php` To: `/Palm-Tree/configure.php`
      - From: `/email.php` To: `/Palm-Tree/email.php`
 - Alternatively, you can update the `httpd.conf` file to set your default index page for your localhost to the `Palm-Tree` directory.
 
-7. Go to your web browser and navigate to the URL: `http://localhost/Palm-Tree` and you should be redirected to the main application page.
+6. Go to your web browser and navigate to the URL: `http://localhost/Palm-Tree` and you should be redirected to the main application page.
 
 ***Closing:***
 

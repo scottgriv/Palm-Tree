@@ -65,6 +65,7 @@
 
 ![Email Menu](docs/images/demo_email.png)
 
+* ****Palm Tree** utilizes [Mustache](http://mustache.github.io/mustache.5.html) styled syntax to create custom email templates.
 * Configure your Email Server to send Business emails using your own plain-text or HTML email template (Gmail Supported).
 * Use variables from a predefined list to send curated emails to your Customers in the **Subject** and **Body**:
 

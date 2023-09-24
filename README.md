@@ -12,6 +12,7 @@
     <a href="https://releases.jquery.com/jquery/">
         <img src="https://img.shields.io/badge/jQuery-2.1.3-186CAF?style=for-the-badge&logo=jquery" alt="jQuery Badge" />
     </a>
+    <br>
     <a href="https://bootstrapdocs.com/v3.3.5/docs/getting-started/">
         <img src="https://img.shields.io/badge/Bootstrap-3.3.5-5A4380?style=for-the-badge&logo=bootstrap" alt="Boostrap Badge" />
     </a>

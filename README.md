@@ -12,7 +12,6 @@
     <a href="https://releases.jquery.com/jquery/">
         <img src="https://img.shields.io/badge/jQuery-2.1.3-186CAF?style=for-the-badge&logo=jquery" alt="jQuery Badge" />
     </a>
-    <br>
     <a href="https://bootstrapdocs.com/v3.3.5/docs/getting-started/">
         <img src="https://img.shields.io/badge/Bootstrap-3.3.5-5A4380?style=for-the-badge&logo=bootstrap" alt="Boostrap Badge" />
     </a>
@@ -22,7 +21,6 @@
     <a href="https://www.apachefriends.org/blog/new_xampp_20220516.html">
         <img src="https://img.shields.io/badge/XAMPP-8.1.6-FB7B1F?style=for-the-badge&logo=xampp" alt="XAMPP Badge" />
     </a>
-    <br>
     <a href="mailto:scott.grivner@gmail.com">
         <img src="https://img.shields.io/badge/email-contact_me-DC4233?style=for-the-badge&logo=gmail" alt="Email Badge" />
     </a>

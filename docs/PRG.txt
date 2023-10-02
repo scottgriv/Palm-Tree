@@ -1,0 +1,5 @@
+Repository Tier: Gold
+
+# This file connects this repository to the PRG guideline and categorization system.
+# Change the above tier to either Gold, Silver, or Bronze for this repo to properly connect to your PRG system.
+# Visit https://github.com/scottgriv/PRG-Personal-Repository-Guidelines for more details.

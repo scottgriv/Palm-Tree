@@ -213,7 +213,7 @@ A quick look at the top-level files and directories in this project.
     - **`/config`**: Images used for the `configure.php` page.
     - **`/fav`**: Favorite/Bookmark icons, including icons for Android and iOS shortcuts.
     - **`/link`**: Images used for the link icons on the `email.php` page (i.e google, facebook, etc.).
-    - **`/logo`**: This is where your uploaded company logo will go from the Configure screen (replacing `logo.php`) for the Customer screen. There's also a backup of the default **Palm Tree** logo named `default_logo.php`.
+    - **`/logo`**: This is where your uploaded company logo will go from the Configure screen (replacing `logo.png`) for the Customer screen.
 4. **`/js`**: The directory where the default JavaScript and jQuery file is stored: `main.js`. It also contains the included dependency file [jQuery-Tabledit v1.2.3](https://github.com/markcell/jquery-tabledit), located in `jquery.tabledit.js`, used to update the Customer screen table using the `customers.php` table.
 5. **`/lib`**: The directory where misc. library files are stored. This directory contains the [PHPMailer v6.7.1](https://github.com/PHPMailer/PHPMailer/tree/5.2-stable) dependency, which is used in the `email.php` file to call email functions. This directory also contains the `phpinfo.php` file, to be viewed in your browser, containing the `phpinfo()` function: 
 > Because every system is setup differently, `phpinfo()` is commonly used to check configuration settings, such as log file locations, and for available predefined variables on a given system. 
@@ -271,7 +271,7 @@ A quick look at the top-level files and directories in this project.
         docker-compose up
     ```
 6. This will build the **Docker Containers** and you should find your application running under *port 80*.
-    - Navigate to: ```http://localhost/index.php```
+    - Navigate to: ```http://localhost```
 
 ***Using XAMPP (Alternative):***
 
@@ -286,8 +286,13 @@ A quick look at the top-level files and directories in this project.
      - From: `/configure.php` To: `/Palm-Tree/configure.php`
      - From: `/email.php` To: `/Palm-Tree/email.php`
 - Alternatively, you can update the `httpd.conf` file to set your default index page for your localhost to the `Palm-Tree` directory.
-
 6. Go to your web browser and navigate to the URL: `http://localhost/Palm-Tree` and you should be redirected to the main application page.
+7. If you're accessing **Palm Tree** from a mobile device on your local network, you'll have to to access the application using your host machines IP address. To find your IP address, open up your CLI and type:
+    ```bash
+        ipconfig
+    ```
+    - You should see your IP address under the `IPv4 Address` field.
+    - Navigate to the URL: `http://<your_ip_address>/Palm-Tree` and you should be redirected to the main application page.
 
 ***Closing:***
 

@@ -2,9 +2,8 @@
 include_once("database.php");
 include("header.php");
 include("encryption.php");
+include('container.php');
 ?>
-<title>Palm Tree</title>
-<?php include('container.php'); ?>
 <div class="container home">
 	<form method="post" action="commands.php">
 		<h5 style="color:#FF0000;line-height: 35px;font-size:13px"><b>Email Template</b></h5>

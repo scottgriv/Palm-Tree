@@ -1,11 +1,7 @@
 <?php
 include_once("database.php");
 include("header.php");
-?>
-<title>Palm Tree</title>
-<script type="text/javascript" src="js/jquery.tabledit.js"></script>
-<link rel="stylesheet" href="css/main.css">
-<?php include('container.php');
+include('container.php');
 ?>
 <div class="container home">
 	<?php

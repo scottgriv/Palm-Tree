@@ -5,7 +5,7 @@ This repository is catagorized under the **PRG** system.
 ## Project Information
 
 Repository Tier: Gold <br>
-Technology: JavaScript, PHP, HTML, CSS <br>
+Technology: JavaScript, PHP, HTML, CSS, MySQL <br>
 Category: Web Application <br>
 Order: 5 <br>
 

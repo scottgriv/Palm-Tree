@@ -288,11 +288,21 @@ A quick look at the top-level files and directories in this project.
 - Alternatively, you can update the `httpd.conf` file to set your default index page for your localhost to the `Palm-Tree` directory.
 6. Go to your web browser and navigate to the URL: `http://localhost/Palm-Tree` and you should be redirected to the main application page.
 7. If you're accessing **Palm Tree** from a mobile device on your local network, you'll have to to access the application using your host machines IP address. To find your IP address, open up your CLI and type:
-    ```bash
-        ipconfig
-    ```
-    - You should see your IP address under the `IPv4 Address` field.
-    - Navigate to the URL: `http://<your_ip_address>/Palm-Tree` and you should be redirected to the main application page.
+
+**Mac**:
+```bash
+ifconfig
+```
+
+- You should see your IP address under the `inet` field, typically listed under `en0` or `en1` for Wi-Fi connections.
+
+**Windows**:
+```bash
+ipconfig
+```
+- You should see your IP address under the `IPv4 Address` field under the appropriate network adapter. <br><br>
+- Update the `sql/config.ini` file changing `db_host_ip = localhost` to `db_host = <your_ip_address>`.
+- Navigate to the URL: `http://<your_ip_address>/Palm-Tree` and you should be redirected to the main application page.
 
 ***Closing:***
 

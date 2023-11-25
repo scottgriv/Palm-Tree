@@ -358,8 +358,8 @@ This project is released under the terms of the **GNU General Public License, ve
 
 ## Credit
 
-**Author:** Scott Grivner <br>
-**Email:** scott.grivner@gmail.com <br>
+**Author:** [Scott Grivner](https://github.com/scottgriv) <br>
+**Email:** [scott.grivner@gmail.com](mailto:scott.grivner@gmail.com) <br>
 **Website:** [scottgrivner.dev](https://www.scottgrivner.dev) <br>
 **Reference:** [Main Branch](https://github.com/scottgriv/Palm-Tree) <br>
 

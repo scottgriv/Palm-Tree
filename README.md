@@ -3,17 +3,17 @@
 ![App Logo](docs/images/banner_large.png)
 
 <p align="center">
-    <a href="https://www.php.net/ChangeLog-8.php#8.1.6"><img src="https://img.shields.io/badge/PHP-8.1.6-7B7FB6?style=for-the-badge&logo=php" alt="PHP Badge" /></a>
-    <a href="https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-31.html"><img src="https://img.shields.io/badge/MySQL-8.0.31-4479A0?style=for-the-badge&logo=mysql" alt="MySQL Badge" /></a>
-    <a href="https://releases.jquery.com/jquery/"><img src="https://img.shields.io/badge/jQuery-2.1.3-186CAF?style=for-the-badge&logo=jquery" alt="jQuery Badge" /></a>
+    <a href="https://www.php.net/ChangeLog-8.php#8.1.6"><img src="https://img.shields.io/badge/PHP-8.1.6-777BB4?style=for-the-badge&logo=php" alt="PHP Badge" /></a>
+    <a href="https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-31.html"><img src="https://img.shields.io/badge/MySQL-8.0.31-4479A1?style=for-the-badge&logo=mysql" alt="MySQL Badge" /></a>
+    <a href="https://releases.jquery.com/jquery/"><img src="https://img.shields.io/badge/jQuery-2.1.3-0769AD?style=for-the-badge&logo=jquery" alt="jQuery Badge" /></a>
     <br>
-    <a href="https://bootstrapdocs.com/v3.3.5/docs/getting-started/"><img src="https://img.shields.io/badge/Bootstrap-3.3.5-5A4380?style=for-the-badge&logo=bootstrap" alt="Boostrap Badge" /></a>
-    <a href="https://docs.docker.com/engine/release-notes/20.10/#201021"><img src="https://img.shields.io/badge/Docker-20.10.21-1C63ED?style=for-the-badge&logo=docker" alt="Docker Badge" /></a>
-    <a href="https://www.apachefriends.org/blog/new_xampp_20220516.html"><img src="https://img.shields.io/badge/XAMPP-8.1.6-FB7B1F?style=for-the-badge&logo=xampp" alt="XAMPP Badge" /></a>
+    <a href="https://bootstrapdocs.com/v3.3.5/docs/getting-started/"><img src="https://img.shields.io/badge/Bootstrap-3.3.5-7952B3?style=for-the-badge&logo=bootstrap" alt="Boostrap Badge" /></a>
+    <a href="https://docs.docker.com/engine/release-notes/20.10/#201021"><img src="https://img.shields.io/badge/Docker-20.10.21-2496ED?style=for-the-badge&logo=docker" alt="Docker Badge" /></a>
+    <a href="https://www.apachefriends.org/blog/new_xampp_20220516.html"><img src="https://img.shields.io/badge/XAMPP-8.1.6-FB7A24?style=for-the-badge&logo=xampp" alt="XAMPP Badge" /></a>
     <br>
-    <a href="https://github.com/scottgriv"><img src="https://img.shields.io/badge/github-follow_me-9031AC?style=for-the-badge&logo=github&color=9031AC" alt="GitHub Badge" /></a>
-    <a href="mailto:scott.grivner@gmail.com"><img src="https://img.shields.io/badge/gmail-contact_me-DC4233?style=for-the-badge&logo=gmail" alt="Email Badge" /></a>
-    <a href="https://www.buymeacoffee.com/scottgriv"><img src="https://img.shields.io/badge/buy_me_a_coffee-support_me-FEDE1F?style=for-the-badge&logo=buymeacoffee&color=FEDE1F" alt="BuyMeACoffee Badge" /></a>
+    <a href="https://github.com/scottgriv"><img src="https://img.shields.io/badge/github-follow_me-181717?style=for-the-badge&logo=github&color=181717" alt="GitHub Badge" /></a>
+    <a href="mailto:scott.grivner@gmail.com"><img src="https://img.shields.io/badge/gmail-contact_me-EA4335?style=for-the-badge&logo=gmail" alt="Email Badge" /></a>
+    <a href="https://www.buymeacoffee.com/scottgriv"><img src="https://img.shields.io/badge/buy_me_a_coffee-support_me-FFDD00?style=for-the-badge&logo=buymeacoffee&color=FFDD00" alt="BuyMeACoffee Badge" /></a>
     <br>
     <a href="https://prgoptimized.com"><img src="https://img.shields.io/badge/PRG-Gold Project-FFD700?style=for-the-badge&logo=data:image/svg%2bxml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDIwMDEwOTA0Ly9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9UUi8yMDAxL1JFQy1TVkctMjAwMTA5MDQvRFREL3N2ZzEwLmR0ZCI+CjxzdmcgdmVyc2lvbj0iMS4wIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiB3aWR0aD0iMjYuMDAwMDAwcHQiIGhlaWdodD0iMzQuMDAwMDAwcHQiIHZpZXdCb3g9IjAgMCAyNi4wMDAwMDAgMzQuMDAwMDAwIgogcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgbWVldCI+Cgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMDAwMCwzNC4wMDAwMDApIHNjYWxlKDAuMTAwMDAwLC0wLjEwMDAwMCkiCmZpbGw9IiNGRkQ3MDAiIHN0cm9rZT0ibm9uZSI+CjxwYXRoIGQ9Ik0xMiAzMjggYy04IC04IC0xMiAtNTEgLTEyIC0xMzUgMCAtMTA5IDIgLTEyNSAxOSAtMTQwIDQyIC0zOCA0OAotNDIgNTkgLTMxIDcgNyAxNyA2IDMxIC0xIDEzIC03IDIxIC04IDIxIC0yIDAgNiAyOCAxMSA2MyAxMyBsNjIgMyAwIDE1MCAwCjE1MCAtMTE1IDMgYy04MSAyIC0xMTkgLTEgLTEyOCAtMTB6IG0xMDIgLTc0IGMtNiAtMzMgLTUgLTM2IDE3IC0zMiAxOCAyIDIzCjggMjEgMjUgLTMgMjQgMTUgNDAgMzAgMjUgMTQgLTE0IC0xNyAtNTkgLTQ4IC02NiAtMjAgLTUgLTIzIC0xMSAtMTggLTMyIDYKLTIxIDMgLTI1IC0xMSAtMjIgLTE2IDIgLTE4IDEzIC0xOCA2NiAxIDc3IDAgNzIgMTggNzIgMTMgMCAxNSAtNyA5IC0zNnoKbTExNiAtMTY5IGMwIC0yMyAtMyAtMjUgLTQ5IC0yNSAtNDAgMCAtNTAgMyAtNTQgMjAgLTMgMTQgLTE0IDIwIC0zMiAyMCAtMTgKMCAtMjkgLTYgLTMyIC0yMCAtNyAtMjUgLTIzIC0yNiAtMjMgLTIgMCAyOSA4IDMyIDEwMiAzMiA4NyAwIDg4IDAgODggLTI1eiIvPgo8L2c+Cjwvc3ZnPgo=" alt="Gold" /></a>
 </p>

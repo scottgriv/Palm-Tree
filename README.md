@@ -46,9 +46,12 @@
 - [Send Emails to Your Customers](#send-emails-to-your-customers)
 - [Disclaimer](#disclaimer)
 - [Closing](#closing)
+- [What's Next?](#whats-next)
 - [Project](#project)
+- [Contributing](#contributing)
+- [Resources](#resources)
 - [License](#license)
-- [Credit](#credit)
+- [Credits](#credits)
 
 ## Features
 
@@ -356,7 +359,7 @@ This project is released under the terms of the **GNU General Public License, ve
 - The GPLv3 is a "copyleft" license, ensuring that derivatives of the software remain open source and under the GPL.
 - For more details and to understand all requirements and conditions, see the [LICENSE](LICENSE) file in this repository.
 
-## Credit
+## Credits
 
 **Author:** [Scott Grivner](https://github.com/scottgriv) <br>
 **Email:** [scott.grivner@gmail.com](mailto:scott.grivner@gmail.com) <br>

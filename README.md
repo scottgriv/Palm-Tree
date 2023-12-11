@@ -20,7 +20,7 @@
 
 --------------- 
 
-<h1 align="center">🌴🌴🌴 Palm Tree 🌴🌴🌴</h1>
+<h1 align="center">🌴🌴 Palm Tree 🌴🌴</h1>
 
 **Palm Tree** is a web based CRM application with Google Business Review email request capabilities.
  - Keep track of your Customers in a digital format - ditch the pen and paper!

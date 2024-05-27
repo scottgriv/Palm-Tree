@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Replace the meta tags with your information (optional) -->
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="A web based CRM application with Google Business Review email request capabilities. Send marketing emails out to your customers, including emails requesting Google Business Reviews. Directly open a Review window on your Google Business page with a click of a button within the email.">
+    <!-- favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
+    <link rel="manifest" href="img/fav/site.webmanifest">
+    <link rel="mask-icon" href="img/fav/safari-pinned-tab.svg" color="#000066">
+    <link rel="shortcut icon" href="img/fav/favicon.ico">
+    <meta name="msapplication-TileColor" content="#000066">
+    <meta name="msapplication-config" content="img/fav/browserconfig.xml">
+    <meta name="theme-color" content="#000066">
+    <!-- Dependencies -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/jquery.tabledit.js"></script>
+    <!-- Website Title --> 
+    <title>Palm Tree</title>
+</head>
+<body class="">
+  <script>
+    /* Display alert for all navigation links */
+    jQuery(document).ready(function() {
+      jQuery(".nav.navbar-nav li a").click(function(event) {
+        event.preventDefault();
+        alert("Feature only available by downloading and configuring the application. \nThis is for demo purposes only. \nConsult the README for more information.");
+      });
+    });
+  </script>
+  <div role="navigation" class="navbar navbar-default navbar-static-top">
+    <div class="container">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Customers</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li><a href="#">Email</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li><a href="#">Configure</a></li>
+      </ul>
+      <ul class="nav navbar-nav">
+        <li><a href="#">Google Business</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container home">
+    <h1><img src="img/logo/logo.png" alt="logo" width="50" height="50" />&nbsp;Your Company Name</h1>
+    <h3>Your Company Description</h3>
+    <h5 style="color:#FF0000;line-height: 35px; font-size:13px"><b>Manage Customers</b>
+        <button id="scrollDown" class="btn btn-default read-more" style="background:#000081;color:white;float:right;" title="Scroll Down in the Table"><img src="img/arrow_down.png" alt=""></button>
+        <button id="scrollUp" class="btn btn-default read-more" style="background:#000081;color:white;float:right;" title="Scroll Up in the Table"><img src="img/arrow_up.png" alt=""></button>
+        <button id='refreshPage' onClick="window.location.reload();" class="btn btn-default read-more" style="background:#000081;color:white;float:right;" title="Refresh Page"><img src="img/refresh.png" alt=""></button>
+        <button class="btn btn-default read-more" style="background:#000081;color:white;float:right;" title="Download Table as a CSV File" onclick="download_table_as_csv('data_table');"><img src="img/export.png" alt=""></button>
+        <button id="insertRow" class="btn btn-default read-more" style="background:#000081;color:white;float:right;" title="Create New Customer"><img src="img/create.png" alt=""></button>
+    </h5>
+    <br>
+    <div class="scrollable">
+        <input class="form-control rounded-0" type="text" id="myInput" onkeyup="searchCustomers()" placeholder="Search for Customers...">
+        <form id="custAddForm">
+            <div id="parent-element">
+                <table id="data_table" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Customer ID</th>
+                            <th id="sort_first_name" class="headerSortUp">First Name</th>
+                            <th id="sort_last_name" class="headerSortUp">Last Name</th>
+                            <th id="sort_email" class="headerSortUp">Email</th>
+                            <th id="sort_phone" class="headerSortUp">Phone</th>
+                            <th id="sort_created" class="headerSortUp">Created Date</th>
+                            <th style="display:none;">Send Email</th>
+                            <th style="display:none;">Notes</th>
+                            <th style="text-align:center; vertical-align:middle">Send Email</th>
+                            <th style="text-align:center; vertical-align:middle">Notes</th>
+                            <th style="text-align:center; vertical-align:middle">Delete Customer</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="1">
+                            <td>1</td>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>john.doe@example.com</td>
+                            <td>1234567890</td>
+                            <td>01/01/2020 10:00 AM</td>
+                            <td class="hiddenFlag" style="display:none;">Sent</td>
+                            <td class="hiddenNotes" style="display:none;">First customer note</td>
+                            <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
+                                <input name="cust_id" id="flag" value="1" type="checkbox" checked="yes" onchange="send_single_email(this)">
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <button id="custNotes" class="custNotes" style="background-image: url(img/notes_exist.png)" type="button" title="Customer Notes"></button>
+                                <div class="popup-container">
+                                    <div id="overlay" style="display:none;"></div>
+                                    <div id="popup" style="display:none;">
+                                        <textarea id="custNotesText" class="custNotesText" name="freeform" rows="20" cols="1" style="text-align: left;" placeholder="Log some Notes about the Customer here..." data-cust-id="1">First customer note</textarea>
+                                        <input type="hidden" id="notes_id" name="notes_id" value="1">
+                                        <button id="submitNotes" class="submitNotes" type="button" style="background:#228B22;color:white;width:269px;height:35px;border:0;" title="Save Customer Notes">Save Notes</button>
+                                        <button id="cancelNotes" class="cancelNotes" type="button" style="background:#FF0000;color:white;width:270px;height:35px;border:0;" title="Cancel Entering Notes">Cancel</button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <input id="custDelete" type="button" title="Delete Customer">
+                            </td>
+                        </tr>
+                        <tr id="2">
+                            <td>2</td>
+                            <td>Jane</td>
+                            <td>Smith</td>
+                            <td>jane.smith@example.com</td>
+                            <td>0987654321</td>
+                            <td>02/01/2020 11:00 AM</td>
+                            <td class="hiddenFlag" style="display:none;">Not Sent</td>
+                            <td class="hiddenNotes" style="display:none;">Second customer note</td>
+                            <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
+                                <input name="cust_id" id="flag" value="2" type="checkbox" onchange="send_single_email(this)">
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <button id="custNotes" class="custNotes" type="button" title="Customer Notes"></button>
+                                <div class="popup-container">
+                                    <div id="overlay" style="display:none;"></div>
+                                    <div id="popup" style="display:none;">
+                                        <textarea id="custNotesText" class="custNotesText" name="freeform" rows="20" cols="1" style="text-align: left;" placeholder="Log some Notes about the Customer here..." data-cust-id="2">Second customer note</textarea>
+                                        <input type="hidden" id="notes_id" name="notes_id" value="2">
+                                        <button id="submitNotes" class="submitNotes" type="button" style="background:#228B22;color:white;width:269px;height:35px;border:0;" title="Save Customer Notes">Save Notes</button>
+                                        <button id="cancelNotes" class="cancelNotes" type="button" style="background:#FF0000;color:white;width:270px;height:35px;border:0;" title="Cancel Entering Notes">Cancel</button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <input id="custDelete" type="button" title="Delete Customer">
+                            </td>
+                        </tr>
+                        <tr id="3">
+                            <td>3</td>
+                            <td>Bob</td>
+                            <td>Brown</td>
+                            <td>bob.brown@example.com</td>
+                            <td>2345678901</td>
+                            <td>03/01/2020 12:00 PM</td>
+                            <td class="hiddenFlag" style="display:none;">Sent</td>
+                            <td class="hiddenNotes" style="display:none;">Third customer note</td>
+                            <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
+                                <input name="cust_id" id="flag" value="3" type="checkbox" checked="yes" onchange="send_single_email(this)">
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <button id="custNotes" class="custNotes" style="background-image: url(img/notes_exist.png)" type="button" title="Customer Notes"></button>
+                                <div class="popup-container">
+                                    <div id="overlay" style="display:none;"></div>
+                                    <div id="popup" style="display:none;">
+                                        <textarea id="custNotesText" class="custNotesText" name="freeform" rows="20" cols="1" style="text-align: left;" placeholder="Log some Notes about the Customer here..." data-cust-id="3">Third customer note</textarea>
+                                        <input type="hidden" id="notes_id" name="notes_id" value="3">
+                                        <button id="submitNotes" class="submitNotes" type="button" style="background:#228B22;color:white;width:269px;height:35px;border:0;" title="Save Customer Notes">Save Notes</button>
+                                        <button id="cancelNotes" class="cancelNotes" type="button" style="background:#FF0000;color:white;width:270px;height:35px;border:0;" title="Cancel Entering Notes">Cancel</button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <input id="custDelete" type="button" title="Delete Customer">
+                            </td>
+                        </tr>
+                        <tr id="4">
+                            <td>4</td>
+                            <td>Alice</td>
+                            <td>Johnson</td>
+                            <td>alice.johnson@example.com</td>
+                            <td>3456789012</td>
+                            <td>04/01/2020 01:00 PM</td>
+                            <td class="hiddenFlag" style="display:none;">Not Sent</td>
+                            <td class="hiddenNotes" style="display:none;"></td>
+                            <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
+                                <input name="cust_id" id="flag" value="4" type="checkbox" onchange="send_single_email(this)">
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <button id="custNotes" class="custNotes" type="button" title="Customer Notes"></button>
+                                <div class="popup-container">
+                                    <div id="overlay" style="display:none;"></div>
+                                    <div id="popup" style="display:none;">
+                                        <textarea id="custNotesText" class="custNotesText" name="freeform" rows="20" cols="1" style="text-align: left;" placeholder="Log some Notes about the Customer here..." data-cust-id="4"></textarea>
+                                        <input type="hidden" id="notes_id" name="notes_id" value="4">
+                                        <button id="submitNotes" class="submitNotes" type="button" style="background:#228B22;color:white;width:269px;height:35px;border:0;" title="Save Customer Notes">Save Notes</button>
+                                        <button id="cancelNotes" class="cancelNotes" type="button" style="background:#FF0000;color:white;width:270px;height:35px;border:0;" title="Cancel Entering Notes">Cancel</button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <input id="custDelete" type="button" title="Delete Customer">
+                            </td>
+                        </tr>
+                        <tr id="5">
+                            <td>5</td>
+                            <td>Charlie</td>
+                            <td>Williams</td>
+                            <td>charlie.williams@example.com</td>
+                            <td>4567890123</td>
+                            <td>05/01/2020 02:00 PM</td>
+                            <td class="hiddenFlag" style="display:none;">Sent</td>
+                            <td class="hiddenNotes" style="display:none;"></td>
+                            <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
+                                <input name="cust_id" id="flag" value="5" type="checkbox" checked="yes" onchange="send_single_email(this)">
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <button id="custNotes" class="custNotes" type="button" title="Customer Notes"></button>
+                                <div class="popup-container">
+                                    <div id="overlay" style="display:none;"></div>
+                                    <div id="popup" style="display:none;">
+                                        <textarea id="custNotesText" class="custNotesText" name="freeform" rows="20" cols="1" style="text-align: left;" placeholder="Log some Notes about the Customer here..." data-cust-id="5"></textarea>
+                                        <input type="hidden" id="notes_id" name="notes_id" value="5">
+                                        <button id="submitNotes" class="submitNotes" type="button" style="background:#228B22;color:white;width:269px;height:35px;border:0;" title="Save Customer Notes">Save Notes</button>
+                                        <button id="cancelNotes" class="cancelNotes" type="button" style="background:#FF0000;color:white;width:270px;height:35px;border:0;" title="Cancel Entering Notes">Cancel</button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <input id="custDelete" type="button" title="Delete Customer">
+                            </td>
+                        </tr>
+                        <tr id="6">
+                            <td>6</td>
+                            <td>David</td>
+                            <td>Lee</td>
+                            <td>david.lee@example.com</td>
+                            <td>5678901234</td>
+                            <td>06/01/2020 03:00 PM</td>
+                            <td class="hiddenFlag" style="display:none;">Not Sent</td>
+                            <td class="hiddenNotes" style="display:none;">Sixth customer note</td>
+                            <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
+                                <input name="cust_id" id="flag" value="6" type="checkbox" onchange="send_single_email(this)">
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <button id="custNotes" class="custNotes" style="background-image: url(img/notes_exist.png)" type="button" title="Customer Notes"></button>
+                                <div class="popup-container">
+                                    <div id="overlay" style="display:none;"></div>
+                                    <div id="popup" style="display:none;">
+                                        <textarea id="custNotesText" class="custNotesText" name="freeform" rows="20" cols="1" style="text-align: left;" placeholder="Log some Notes about the Customer here..." data-cust-id="6">Sixth customer note</textarea>
+                                        <input type="hidden" id="notes_id" name="notes_id" value="6">
+                                        <button id="submitNotes" class="submitNotes" type="button" style="background:#228B22;color:white;width:269px;height:35px;border:0;" title="Save Customer Notes">Save Notes</button>
+                                        <button id="cancelNotes" class="cancelNotes" type="button" style="background:#FF0000;color:white;width:270px;height:35px;border:0;" title="Cancel Entering Notes">Cancel</button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <input id="custDelete" type="button" title="Delete Customer">
+                            </td>
+                        </tr>
+                        <tr id="7">
+                            <td>7</td>
+                            <td>Emily</td>
+                            <td>Davis</td>
+                            <td>emily.davis@example.com</td>
+                            <td>6789012345</td>
+                            <td>07/01/2020 04:00 PM</td>
+                            <td class="hiddenFlag" style="display:none;">Sent</td>
+                            <td class="hiddenNotes" style="display:none;"></td>
+                            <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
+                                <input name="cust_id" id="flag" value="7" type="checkbox" checked="yes" onchange="send_single_email(this)">
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <button id="custNotes" class="custNotes" type="button" title="Customer Notes"></button>
+                                <div class="popup-container">
+                                    <div id="overlay" style="display:none;"></div>
+                                    <div id="popup" style="display:none;">
+                                        <textarea id="custNotesText" class="custNotesText" name="freeform" rows="20" cols="1" style="text-align: left;" placeholder="Log some Notes about the Customer here..." data-cust-id="7"></textarea>
+                                        <input type="hidden" id="notes_id" name="notes_id" value="7">
+                                        <button id="submitNotes" class="submitNotes" type="button" style="background:#228B22;color:white;width:269px;height:35px;border:0;" title="Save Customer Notes">Save Notes</button>
+                                        <button id="cancelNotes" class="cancelNotes" type="button" style="background:#FF0000;color:white;width:270px;height:35px;border:0;" title="Cancel Entering Notes">Cancel</button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <input id="custDelete" type="button" title="Delete Customer">
+                            </td>
+                        </tr>
+                        <tr id="8">
+                            <td>8</td>
+                            <td>Frank</td>
+                            <td>Garcia</td>
+                            <td>frank.garcia@example.com</td>
+                            <td>7890123456</td>
+                            <td>08/01/2020 05:00 PM</td>
+                            <td class="hiddenFlag" style="display:none;">Not Sent</td>
+                            <td class="hiddenNotes" style="display:none;">Eighth customer note</td>
+                            <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
+                                <input name="cust_id" id="flag" value="8" type="checkbox" onchange="send_single_email(this)">
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <button id="custNotes" class="custNotes" style="background-image: url(img/notes_exist.png)" type="button" title="Customer Notes"></button>
+                                <div class="popup-container">
+                                    <div id="overlay" style="display:none;"></div>
+                                    <div id="popup" style="display:none;">
+                                        <textarea id="custNotesText" class="custNotesText" name="freeform" rows="20" cols="1" style="text-align: left;" placeholder="Log some Notes about the Customer here..." data-cust-id="8">Eighth customer note</textarea>
+                                        <input type="hidden" id="notes_id" name="notes_id" value="8">
+                                        <button id="submitNotes" class="submitNotes" type="button" style="background:#228B22;color:white;width:269px;height:35px;border:0;" title="Save Customer Notes">Save Notes</button>
+                                        <button id="cancelNotes" class="cancelNotes" type="button" style="background:#FF0000;color:white;width:270px;height:35px;border:0;" title="Cancel Entering Notes">Cancel</button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <input id="custDelete" type="button" title="Delete Customer">
+                            </td>
+                        </tr>
+                        <tr id="9">
+                            <td>9</td>
+                            <td>Grace</td>
+                            <td>Martinez</td>
+                            <td>grace.martinez@example.com</td>
+                            <td>8901234567</td>
+                            <td>09/01/2020 06:00 PM</td>
+                            <td class="hiddenFlag" style="display:none;">Sent</td>
+                            <td class="hiddenNotes" style="display:none;"></td>
+                            <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
+                                <input name="cust_id" id="flag" value="9" type="checkbox" checked="yes" onchange="send_single_email(this)">
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <button id="custNotes" class="custNotes" type="button" title="Customer Notes"></button>
+                                <div class="popup-container">
+                                    <div id="overlay" style="display:none;"></div>
+                                    <div id="popup" style="display:none;">
+                                        <textarea id="custNotesText" class="custNotesText" name="freeform" rows="20" cols="1" style="text-align: left;" placeholder="Log some Notes about the Customer here..." data-cust-id="9"></textarea>
+                                        <input type="hidden" id="notes_id" name="notes_id" value="9">
+                                        <button id="submitNotes" class="submitNotes" type="button" style="background:#228B22;color:white;width:269px;height:35px;border:0;" title="Save Customer Notes">Save Notes</button>
+                                        <button id="cancelNotes" class="cancelNotes" type="button" style="background:#FF0000;color:white;width:270px;height:35px;border:0;" title="Cancel Entering Notes">Cancel</button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <input id="custDelete" type="button" title="Delete Customer">
+                            </td>
+                        </tr>
+                        <tr id="10">
+                            <td>10</td>
+                            <td>Hank</td>
+                            <td>Miller</td>
+                            <td>hank.miller@example.com</td>
+                            <td>9012345678</td>
+                            <td>10/01/2020 07:00 PM</td>
+                            <td class="hiddenFlag" style="display:none;">Not Sent</td>
+                            <td class="hiddenNotes" style="display:none;"></td>
+                            <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
+                                <input name="cust_id" id="flag" value="10" type="checkbox" onchange="send_single_email(this)">
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <button id="custNotes" class="custNotes" type="button" title="Customer Notes"></button>
+                                <div class="popup-container">
+                                    <div id="overlay" style="display:none;"></div>
+                                    <div id="popup" style="display:none;">
+                                        <textarea id="custNotesText" class="custNotesText" name="freeform" rows="20" cols="1" style="text-align: left;" placeholder="Log some Notes about the Customer here..." data-cust-id="10"></textarea>
+                                        <input type="hidden" id="notes_id" name="notes_id" value="10">
+                                        <button id="submitNotes" class="submitNotes" type="button" style="background:#228B22;color:white;width:269px;height:35px;border:0;" title="Save Customer Notes">Save Notes</button>
+                                        <button id="cancelNotes" class="cancelNotes" type="button" style="background:#FF0000;color:white;width:270px;height:35px;border:0;" title="Cancel Entering Notes">Cancel</button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <input id="custDelete" type="button" title="Delete Customer">
+                            </td>
+                        </tr>
+                        <tr id="11">
+                            <td>11</td>
+                            <td>Ian</td>
+                            <td>White</td>
+                            <td>ian.white@example.com</td>
+                            <td>0123456789</td>
+                            <td>11/01/2020 08:00 PM</td>
+                            <td class="hiddenFlag" style="display:none;">Sent</td>
+                            <td class="hiddenNotes" style="display:none;">Eleventh customer note</td>
+                            <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
+                                <input name="cust_id" id="flag" value="11" type="checkbox" checked="yes" onchange="send_single_email(this)">
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <button id="custNotes" class="custNotes" style="background-image: url(img/notes_exist.png)" type="button" title="Customer Notes"></button>
+                                <div class="popup-container">
+                                    <div id="overlay" style="display:none;"></div>
+                                    <div id="popup" style="display:none;">
+                                        <textarea id="custNotesText" class="custNotesText" name="freeform" rows="20" cols="1" style="text-align: left;" placeholder="Log some Notes about the Customer here..." data-cust-id="11">Eleventh customer note</textarea>
+                                        <input type="hidden" id="notes_id" name="notes_id" value="11">
+                                        <button id="submitNotes" class="submitNotes" type="button" style="background:#228B22;color:white;width:269px;height:35px;border:0;" title="Save Customer Notes">Save Notes</button>
+                                        <button id="cancelNotes" class="cancelNotes" type="button" style="background:#FF0000;color:white;width:270px;height:35px;border:0;" title="Cancel Entering Notes">Cancel</button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <input id="custDelete" type="button" title="Delete Customer">
+                            </td>
+                        </tr>
+                        <tr id="12">
+                            <td>12</td>
+                            <td>Jack</td>
+                            <td>Black</td>
+                            <td>jack.black@example.com</td>
+                            <td>1098765432</td>
+                            <td>12/01/2020 09:00 AM</td>
+                            <td class="hiddenFlag" style="display:none;">Not Sent</td>
+                            <td class="hiddenNotes" style="display:none;"></td>
+                            <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
+                                <input name="cust_id" id="flag" value="12" type="checkbox" onchange="send_single_email(this)">
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <button id="custNotes" class="custNotes" type="button" title="Customer Notes"></button>
+                                <div class="popup-container">
+                                    <div id="overlay" style="display:none;"></div>
+                                    <div id="popup" style="display:none;">
+                                        <textarea id="custNotesText" class="custNotesText" name="freeform" rows="20" cols="1" style="text-align: left;" placeholder="Log some Notes about the Customer here..." data-cust-id="12"></textarea>
+                                        <input type="hidden" id="notes_id" name="notes_id" value="12">
+                                        <button id="submitNotes" class="submitNotes" type="button" style="background:#228B22;color:white;width:269px;height:35px;border:0;" title="Save Customer Notes">Save Notes</button>
+                                        <button id="cancelNotes" class="cancelNotes" type="button" style="background:#FF0000;color:white;width:270px;height:35px;border:0;" title="Cancel Entering Notes">Cancel</button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <input id="custDelete" type="button" title="Delete Customer">
+                            </td>
+                        </tr>
+                        <tr id="13">
+                            <td>13</td>
+                            <td>Karen</td>
+                            <td>Green</td>
+                            <td>karen.green@example.com</td>
+                            <td>2109876543</td>
+                            <td>01/02/2021 10:30 AM</td>
+                            <td class="hiddenFlag" style="display:none;">Sent</td>
+                            <td class="hiddenNotes" style="display:none;">Twelfth customer note</td>
+                            <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
+                                <input name="cust_id" id="flag" value="13" type="checkbox" checked="yes" onchange="send_single_email(this)">
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <button id="custNotes" class="custNotes" style="background-image: url(img/notes_exist.png)" type="button" title="Customer Notes"></button>
+                                <div class="popup-container">
+                                    <div id="overlay" style="display:none;"></div>
+                                    <div id="popup" style="display:none;">
+                                        <textarea id="custNotesText" class="custNotesText" name="freeform" rows="20" cols="1" style="text-align: left;" placeholder="Log some Notes about the Customer here..." data-cust-id="13">Twelfth customer note</textarea>
+                                        <input type="hidden" id="notes_id" name="notes_id" value="13">
+                                        <button id="submitNotes" class="submitNotes" type="button" style="background:#228B22;color:white;width:269px;height:35px;border:0;" title="Save Customer Notes">Save Notes</button>
+                                        <button id="cancelNotes" class="cancelNotes" type="button" style="background:#FF0000;color:white;width:270px;height:35px;border:0;" title="Cancel Entering Notes">Cancel</button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <input id="custDelete" type="button" title="Delete Customer">
+                            </td>
+                        </tr>
+                        <tr id="14">
+                            <td>14</td>
+                            <td>Linda</td>
+                            <td>Blue</td>
+                            <td>linda.blue@example.com</td>
+                            <td>3210987654</td>
+                            <td>02/02/2021 11:45 AM</td>
+                            <td class="hiddenFlag" style="display:none;">Not Sent</td>
+                            <td class="hiddenNotes" style="display:none;"></td>
+                            <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
+                                <input name="cust_id" id="flag" value="14" type="checkbox" onchange="send_single_email(this)">
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <button id="custNotes" class="custNotes" type="button" title="Customer Notes"></button>
+                                <div class="popup-container">
+                                    <div id="overlay" style="display:none;"></div>
+                                    <div id="popup" style="display:none;">
+                                        <textarea id="custNotesText" class="custNotesText" name="freeform" rows="20" cols="1" style="text-align: left;" placeholder="Log some Notes about the Customer here..." data-cust-id="14"></textarea>
+                                        <input type="hidden" id="notes_id" name="notes_id" value="14">
+                                        <button id="submitNotes" class="submitNotes" type="button" style="background:#228B22;color:white;width:269px;height:35px;border:0;" title="Save Customer Notes">Save Notes</button>
+                                        <button id="cancelNotes" class="cancelNotes" type="button" style="background:#FF0000;color:white;width:270px;height:35px;border:0;" title="Cancel Entering Notes">Cancel</button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <input id="custDelete" type="button" title="Delete Customer">
+                            </td>
+                        </tr>
+                        <tr id="15">
+                            <td>15</td>
+                            <td>Mike</td>
+                            <td>Yellow</td>
+                            <td>mike.yellow@example.com</td>
+                            <td>4321098765</td>
+                            <td>03/02/2021 01:15 PM</td>
+                            <td class="hiddenFlag" style="display:none;">Sent</td>
+                            <td class="hiddenNotes" style="display:none;">Thirteenth customer note</td>
+                            <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
+                                <input name="cust_id" id="flag" value="15" type="checkbox" checked="yes" onchange="send_single_email(this)">
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <button id="custNotes" class="custNotes" style="background-image: url(img/notes_exist.png)" type="button" title="Customer Notes"></button>
+                                <div class="popup-container">
+                                    <div id="overlay" style="display:none;"></div>
+                                    <div id="popup" style="display:none;">
+                                        <textarea id="custNotesText" class="custNotesText" name="freeform" rows="20" cols="1" style="text-align: left;" placeholder="Log some Notes about the Customer here..." data-cust-id="15">Thirteenth customer note</textarea>
+                                        <input type="hidden" id="notes_id" name="notes_id" value="15">
+                                        <button id="submitNotes" class="submitNotes" type="button" style="background:#228B22;color:white;width:269px;height:35px;border:0;" title="Save Customer Notes">Save Notes</button>
+                                        <button id="cancelNotes" class="cancelNotes" type="button" style="background:#FF0000;color:white;width:270px;height:35px;border:0;" title="Cancel Entering Notes">Cancel</button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <input id="custDelete" type="button" title="Delete Customer">
+                            </td>
+                        </tr>
+                        <tr id="16">
+                            <td>16</td>
+                            <td>Nina</td>
+                            <td>Red</td>
+                            <td>nina.red@example.com</td>
+                            <td>5432109876</td>
+                            <td>04/02/2021 02:30 PM</td>
+                            <td class="hiddenFlag" style="display:none;">Not Sent</td>
+                            <td class="hiddenNotes" style="display:none;"></td>
+                            <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
+                                <input name="cust_id" id="flag" value="16" type="checkbox" onchange="send_single_email(this)">
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <button id="custNotes" class="custNotes" type="button" title="Customer Notes"></button>
+                                <div class="popup-container">
+                                    <div id="overlay" style="display:none;"></div>
+                                    <div id="popup" style="display:none;">
+                                        <textarea id="custNotesText" class="custNotesText" name="freeform" rows="20" cols="1" style="text-align: left;" placeholder="Log some Notes about the Customer here..." data-cust-id="16"></textarea>
+                                        <input type="hidden" id="notes_id" name="notes_id" value="16">
+                                        <button id="submitNotes" class="submitNotes" type="button" style="background:#228B22;color:white;width:269px;height:35px;border:0;" title="Save Customer Notes">Save Notes</button>
+                                        <button id="cancelNotes" class="cancelNotes" type="button" style="background:#FF0000;color:white;width:270px;height:35px;border:0;" title="Cancel Entering Notes">Cancel</button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <input id="custDelete" type="button" title="Delete Customer">
+                            </td>
+                        </tr>
+                        <tr id="17">
+                            <td>17</td>
+                            <td>Oscar</td>
+                            <td>Purple</td>
+                            <td>oscar.purple@example.com</td>
+                            <td>6543210987</td>
+                            <td>05/02/2021 03:45 PM</td>
+                            <td class="hiddenFlag" style="display:none;">Sent</td>
+                            <td class="hiddenNotes" style="display:none;"></td>
+                            <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
+                                <input name="cust_id" id="flag" value="17" type="checkbox" checked="yes" onchange="send_single_email(this)">
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <button id="custNotes" class="custNotes" type="button" title="Customer Notes"></button>
+                                <div class="popup-container">
+                                    <div id="overlay" style="display:none;"></div>
+                                    <div id="popup" style="display:none;">
+                                        <textarea id="custNotesText" class="custNotesText" name="freeform" rows="20" cols="1" style="text-align: left;" placeholder="Log some Notes about the Customer here..." data-cust-id="17"></textarea>
+                                        <input type="hidden" id="notes_id" name="notes_id" value="17">
+                                        <button id="submitNotes" class="submitNotes" type="button" style="background:#228B22;color:white;width:269px;height:35px;border:0;" title="Save Customer Notes">Save Notes</button>
+                                        <button id="cancelNotes" class="cancelNotes" type="button" style="background:#FF0000;color:white;width:270px;height:35px;border:0;" title="Cancel Entering Notes">Cancel</button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <input id="custDelete" type="button" title="Delete Customer">
+                            </td>
+                        </tr>
+                        <tr id="18">
+                            <td>18</td>
+                            <td>Paul</td>
+                            <td>Orange</td>
+                            <td>paul.orange@example.com</td>
+                            <td>7654321098</td>
+                            <td>06/02/2021 05:00 PM</td>
+                            <td class="hiddenFlag" style="display:none;">Not Sent</td>
+                            <td class="hiddenNotes" style="display:none;">Fourteenth customer note</td>
+                            <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
+                                <input name="cust_id" id="flag" value="18" type="checkbox" onchange="send_single_email(this)">
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <button id="custNotes" class="custNotes" style="background-image: url(img/notes_exist.png)" type="button" title="Customer Notes"></button>
+                                <div class="popup-container">
+                                    <div id="overlay" style="display:none;"></div>
+                                    <div id="popup" style="display:none;">
+                                        <textarea id="custNotesText" class="custNotesText" name="freeform" rows="20" cols="1" style="text-align: left;" placeholder="Log some Notes about the Customer here..." data-cust-id="18">Fourteenth customer note</textarea>
+                                        <input type="hidden" id="notes_id" name="notes_id" value="18">
+                                        <button id="submitNotes" class="submitNotes" type="button" style="background:#228B22;color:white;width:269px;height:35px;border:0;" title="Save Customer Notes">Save Notes</button>
+                                        <button id="cancelNotes" class="cancelNotes" type="button" style="background:#FF0000;color:white;width:270px;height:35px;border:0;" title="Cancel Entering Notes">Cancel</button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <input id="custDelete" type="button" title="Delete Customer">
+                            </td>
+                        </tr>
+                        <tr id="19">
+                            <td>19</td>
+                            <td>Quincy</td>
+                            <td>Gray</td>
+                            <td>quincy.gray@example.com</td>
+                            <td>8765432109</td>
+                            <td>07/02/2021 06:15 PM</td>
+                            <td class="hiddenFlag" style="display:none;">Sent</td>
+                            <td class="hiddenNotes" style="display:none;"></td>
+                            <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
+                                <input name="cust_id" id="flag" value="19" type="checkbox" checked="yes" onchange="send_single_email(this)">
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <button id="custNotes" class="custNotes" type="button" title="Customer Notes"></button>
+                                <div class="popup-container">
+                                    <div id="overlay" style="display:none;"></div>
+                                    <div id="popup" style="display:none;">
+                                        <textarea id="custNotesText" class="custNotesText" name="freeform" rows="20" cols="1" style="text-align: left;" placeholder="Log some Notes about the Customer here..." data-cust-id="19"></textarea>
+                                        <input type="hidden" id="notes_id" name="notes_id" value="19">
+                                        <button id="submitNotes" class="submitNotes" type="button" style="background:#228B22;color:white;width:269px;height:35px;border:0;" title="Save Customer Notes">Save Notes</button>
+                                        <button id="cancelNotes" class="cancelNotes" type="button" style="background:#FF0000;color:white;width:270px;height:35px;border:0;" title="Cancel Entering Notes">Cancel</button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <input id="custDelete" type="button" title="Delete Customer">
+                            </td>
+                        </tr>
+                        <tr id="20">
+                            <td>20</td>
+                            <td>Rachel</td>
+                            <td>Brown</td>
+                            <td>rachel.brown@example.com</td>
+                            <td>9876543210</td>
+                            <td>08/02/2021 07:30 PM</td>
+                            <td class="hiddenFlag" style="display:none;">Not Sent</td>
+                            <td class="hiddenNotes" style="display:none;">Fifteenth customer note</td>
+                            <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
+                                <input name="cust_id" id="flag" value="20" type="checkbox" onchange="send_single_email(this)">
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <button id="custNotes" class="custNotes" style="background-image: url(img/notes_exist.png)" type="button" title="Customer Notes"></button>
+                                <div class="popup-container">
+                                    <div id="overlay" style="display:none;"></div>
+                                    <div id="popup" style="display:none;">
+                                        <textarea id="custNotesText" class="custNotesText" name="freeform" rows="20" cols="1" style="text-align: left;" placeholder="Log some Notes about the Customer here..." data-cust-id="20">Fifteenth customer note</textarea>
+                                        <input type="hidden" id="notes_id" name="notes_id" value="20">
+                                        <button id="submitNotes" class="submitNotes" type="button" style="background:#228B22;color:white;width:269px;height:35px;border:0;" title="Save Customer Notes">Save Notes</button>
+                                        <button id="cancelNotes" class="cancelNotes" type="button" style="background:#FF0000;color:white;width:270px;height:35px;border:0;" title="Cancel Entering Notes">Cancel</button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="text-align:center; vertical-align:middle">
+                                <input id="custDelete" type="button" title="Delete Customer">
+                            </td>
+                        </tr>
+                        <!-- Add more rows as needed, using the same structure -->
+                    </tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="js/main.js"></script>
+  <script>
+    // Example function to handle the email sending action
+    function send_single_email(element) {
+        alert("Sending email for customer ID: " + element.value);
+    }
+    
+    // Example function to handle the table download as CSV action
+    function download_table_as_csv(table_id, separator = ",") {
+    // Check if Counter is NOT Null
+    if (counter != null) {
+        alert(
+        "You cannot export data when you're in the process of creating a new Customer.\n\rPlease delete the bottom row and try again."
+        );
+        return;
+    }
+
+    // Select rows from table_id
+    var rows = document.querySelectorAll("table#" + table_id + " tr");
+
+    // Construct csv
+    var csv = [];
+    for (var i = 0; i < rows.length; i++) {
+        var row = [],
+        cols = rows[i].querySelectorAll("td, th");
+        for (var j = 0; j < cols.length; j++) {
+        // Clean innertext to remove multiple spaces and jumpline (break csv)]
+        if (j <= 7) {
+            var data = cols[j].innerText
+            .replace(/(\r\n|\n|\r)/gm, "")
+            .replace(/(\s\s)/gm, " ");
+            // Escape double-quote with double-double-quote (see https://stackoverflow.com/questions/17808511/properly-escape-a-double-quote-in-csv)
+            data = data.replace(/"/g, '""');
+            // Push escaped string
+            row.push('"' + data + '"');
+        }
+        }
+        csv.push(row.join(separator));
+    }
+
+    var csv_string = csv.join("\n");
+
+    // Download the File
+    var filename =
+        "Palm_Tree_Customers_" + new Date().toLocaleDateString() + ".csv";
+    var link = document.createElement("a");
+    link.style.display = "none";
+    link.setAttribute("target", "_blank");
+    link.setAttribute(
+        "href",
+        "data:text/csv;charset=utf-8," + encodeURIComponent(csv_string)
+    );
+    link.setAttribute("download", filename);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    }
+    
+    // Example function for customer search functionality
+    function searchCustomers() {
+        alert("Searching customers...");
+    }
+  </script>
+</body>
+</html>

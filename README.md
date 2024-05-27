@@ -10,6 +10,7 @@
     <a href="https://bootstrapdocs.com/v3.3.5/docs/getting-started/"><img src="https://img.shields.io/badge/Bootstrap-3.3.5-7952B3?style=for-the-badge&logo=bootstrap" alt="Boostrap Badge" /></a>
     <a href="https://docs.docker.com/engine/release-notes/20.10/#201021"><img src="https://img.shields.io/badge/Docker-20.10.21-2496ED?style=for-the-badge&logo=docker" alt="Docker Badge" /></a>
     <a href="https://www.apachefriends.org/blog/new_xampp_20220516.html"><img src="https://img.shields.io/badge/XAMPP-8.1.6-FB7A24?style=for-the-badge&logo=xampp" alt="XAMPP Badge" /></a>
+    <a href="https://github.com/scottgriv/Palm-Tree/actions/workflows/pages/pages-build-deployment" target="_blank"><img alt="GitHub Workflow Status (with event)" src="https://img.shields.io/github/actions/workflow/status/scottgriv/Palm-Tree/pages%2Fpages-build-deployment?style=for-the-badge&logo=github&label=GitHub%20Pages"></a>
     <br>
     <a href="https://github.com/scottgriv"><img src="https://img.shields.io/badge/github-follow_me-181717?style=for-the-badge&logo=github&color=181717" alt="GitHub Badge" /></a>
     <a href="mailto:scott.grivner@gmail.com"><img src="https://img.shields.io/badge/gmail-contact_me-EA4335?style=for-the-badge&logo=gmail" alt="Email Badge" /></a>

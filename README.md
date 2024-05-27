@@ -1,6 +1,6 @@
 <!-- Begin README -->
 
-![App Logo](docs/images/banner_large.png)
+[![App Logo](docs/images/banner_large.png)](https://scottgriv.github.io/Palm-Tree/)
 
 <p align="center">
     <a href="https://www.php.net/ChangeLog-8.php#8.1.6"><img src="https://img.shields.io/badge/PHP-8.1.6-777BB4?style=for-the-badge&logo=php" alt="PHP Badge" /></a>
@@ -27,6 +27,11 @@
  - Send marketing emails out, including emails requesting Google Business Reviews.
  - Directly open a Review window on your Google Business page with a click of a button within the email.
  - Perfect for small businesses, entrepreneurs, and anyone looking to keep track of their customers and send out marketing emails.
+ - Visit a demo of the application [here](https://scottgriv.github.io/Palm-Tree/).
+
+ > [!NOTE]
+ > The demo page only includes some basic functionality of the application.
+ > To access the full functionality, clone or fork the project and run on your local machine following the instructions in this `README`.
 
 ---------------
 
@@ -173,7 +178,8 @@ Palm-Tree
 ├─ email.php # PHP file behind the Email screen                              
 ├─ encryption.php # Encryption file used to encrypt/decrypt data in the database                         
 ├─ footer.php # The websites footer                             
-├─ header.php # The website's header which also contains the path for favorite icons and remote JavaScript/CSS libraries                           
+├─ header.php # The website's header which also contains the path for favorite icons and remote JavaScript/CSS libraries   
+├─ index.html # Demo page built to demo the application on GitHub Pages.                        
 ├─ index.php # Default landing page of the website which contains a redirect to `customers.php` (the Customers screen)                            
 ├─ send_email.php # PHP file used to send emails out to customers
 ├─ Dockerfile # Dockerfile for the application

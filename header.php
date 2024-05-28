@@ -7,11 +7,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <meta name="description" content="A web based CRM application with Google Business Review email request capabilities. Send marketing emails out to your customers, including emails requesting Google Business Reviews. Directly open a Review window on your Google Business page with a click of a button within the email.">
+    <meta name="description" content="A web based CRM application with Google Business review email request capabilities. Send marketing emails out to your customers, including emails requesting Google Business reviews. Directly open a review window on your Google Business page with a click of a button within the email.">
     <!-- favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
+    <!-- OG info -->
+    <meta property="og:title" content="Palm Tree">
+    <meta property="og:description" content="A web based CRM application with Google Business review email request capabilities. Send marketing emails out to your customers, including emails requesting Google Business reviews. Directly open a review window on your Google Business page with a click of a button within the email.">
+    <meta property="og:image" content="/img/banner_social.png">
+    <meta property="og:type" content="website">
+    <!-- X info -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@scottgrivner">
+    <meta name="twitter:title" content="Palm Tree">
+    <meta name="twitter:description" content="A web based CRM application with Google Business review email request capabilities. Send marketing emails out to your customers, including emails requesting Google Business reviews. Directly open a review window on your Google Business page with a click of a button within the email.">
+    <meta name="twitter:image" content="/img/banner_social.png">
+    <!-- manifest info -->
     <link rel="manifest" href="img/fav/site.webmanifest">
     <link rel="mask-icon" href="img/fav/safari-pinned-tab.svg" color="#000066">
     <link rel="shortcut icon" href="img/fav/favicon.ico">

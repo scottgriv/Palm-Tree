@@ -359,6 +359,7 @@ Below are some external resources I found helpful when creating **Palm Tree**:
 - [Imgur](https://imgur.com/) - Imgur is an online image hosting service.
 - [jQuery-Tabledit v1.2.3](https://github.com/markcell/jquery-tabledit) - jQuery-Tabledit is a jQuery plugin that provides AJAX-enabled in-place editing for your table cells.
 - [PHPMailer v6.7.1](https://github.com/PHPMailer/PHPMailer) - PHPMailer is a full-featured email creation and transfer class for PHP.                
+- [Google Business Profile](https://www.google.com/business/?ppsrc=GPDA2) - Turn people who find you on Google Search and Maps into new customers with a free Business Profile for your storefront or service area. Personalize your profile with photos, offers, posts, and more.  
 
 ## License
 

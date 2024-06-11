@@ -106,8 +106,10 @@ I created **Palm Tree** to help small businesses and entrepreneurs keep track of
     ```bash
         docker-compose up
     ```
-    > [!NOTE]
-    > This step may take a while to download all of the necessary images.
+
+> [!NOTE]
+> This step may take a while to download all of the necessary images.
+
 6. This will build the **Docker Containers** and you should find your application running under *port 80*.
     - Navigate to: ```http://localhost```
 

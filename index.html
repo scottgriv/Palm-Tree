@@ -693,7 +693,12 @@
   <script>
     // Example function to handle the email sending action
     function send_single_email(element) {
-        alert("Sending email for customer ID: " + element.value);
+        if (element.checked) {
+            // Do nothing if the checkbox is already checked
+            return;
+        } else {
+            alert("Sending email for customer ID: " + element.value);
+        }
     }
     
     // Example function to handle the table download as CSV action

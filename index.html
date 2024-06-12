@@ -131,7 +131,7 @@
                             <td class="hiddenFlag" style="display:none;">Sent</td>
                             <td class="hiddenNotes" style="display:none;">First customer note</td>
                             <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
-                                <input name="cust_id" id="flag" value="1" type="checkbox" checked="yes" onchange="send_single_email(this)">
+                                <input name="cust_id" id="flag" value="1" type="checkbox" checked="yes" onchange="send_single_email_static(this)">
                             </td>
                             <td style="text-align:center; vertical-align:middle">
                                 <button id="custNotes" class="custNotes" style="background-image: url(img/notes_exist.png)" type="button" title="Customer Notes"></button>
@@ -159,7 +159,7 @@
                             <td class="hiddenFlag" style="display:none;">Not Sent</td>
                             <td class="hiddenNotes" style="display:none;">Second customer note</td>
                             <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
-                                <input name="cust_id" id="flag" value="2" type="checkbox" onchange="send_single_email(this)">
+                                <input name="cust_id" id="flag" value="2" type="checkbox" onchange="send_single_email_static(this)">
                             </td>
                             <td style="text-align:center; vertical-align:middle">
                                 <button id="custNotes" class="custNotes" type="button" title="Customer Notes"></button>
@@ -187,7 +187,7 @@
                             <td class="hiddenFlag" style="display:none;">Sent</td>
                             <td class="hiddenNotes" style="display:none;">Third customer note</td>
                             <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
-                                <input name="cust_id" id="flag" value="3" type="checkbox" checked="yes" onchange="send_single_email(this)">
+                                <input name="cust_id" id="flag" value="3" type="checkbox" checked="yes" onchange="send_single_email_static(this)">
                             </td>
                             <td style="text-align:center; vertical-align:middle">
                                 <button id="custNotes" class="custNotes" style="background-image: url(img/notes_exist.png)" type="button" title="Customer Notes"></button>
@@ -215,7 +215,7 @@
                             <td class="hiddenFlag" style="display:none;">Not Sent</td>
                             <td class="hiddenNotes" style="display:none;"></td>
                             <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
-                                <input name="cust_id" id="flag" value="4" type="checkbox" onchange="send_single_email(this)">
+                                <input name="cust_id" id="flag" value="4" type="checkbox" onchange="send_single_email_static(this)">
                             </td>
                             <td style="text-align:center; vertical-align:middle">
                                 <button id="custNotes" class="custNotes" type="button" title="Customer Notes"></button>
@@ -243,7 +243,7 @@
                             <td class="hiddenFlag" style="display:none;">Sent</td>
                             <td class="hiddenNotes" style="display:none;"></td>
                             <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
-                                <input name="cust_id" id="flag" value="5" type="checkbox" checked="yes" onchange="send_single_email(this)">
+                                <input name="cust_id" id="flag" value="5" type="checkbox" checked="yes" onchange="send_single_email_static(this)">
                             </td>
                             <td style="text-align:center; vertical-align:middle">
                                 <button id="custNotes" class="custNotes" type="button" title="Customer Notes"></button>
@@ -271,7 +271,7 @@
                             <td class="hiddenFlag" style="display:none;">Not Sent</td>
                             <td class="hiddenNotes" style="display:none;">Sixth customer note</td>
                             <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
-                                <input name="cust_id" id="flag" value="6" type="checkbox" onchange="send_single_email(this)">
+                                <input name="cust_id" id="flag" value="6" type="checkbox" onchange="send_single_email_static(this)">
                             </td>
                             <td style="text-align:center; vertical-align:middle">
                                 <button id="custNotes" class="custNotes" style="background-image: url(img/notes_exist.png)" type="button" title="Customer Notes"></button>
@@ -299,7 +299,7 @@
                             <td class="hiddenFlag" style="display:none;">Sent</td>
                             <td class="hiddenNotes" style="display:none;"></td>
                             <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
-                                <input name="cust_id" id="flag" value="7" type="checkbox" checked="yes" onchange="send_single_email(this)">
+                                <input name="cust_id" id="flag" value="7" type="checkbox" checked="yes" onchange="send_single_email_static(this)">
                             </td>
                             <td style="text-align:center; vertical-align:middle">
                                 <button id="custNotes" class="custNotes" type="button" title="Customer Notes"></button>
@@ -327,7 +327,7 @@
                             <td class="hiddenFlag" style="display:none;">Not Sent</td>
                             <td class="hiddenNotes" style="display:none;">Eighth customer note</td>
                             <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
-                                <input name="cust_id" id="flag" value="8" type="checkbox" onchange="send_single_email(this)">
+                                <input name="cust_id" id="flag" value="8" type="checkbox" onchange="send_single_email_static(this)">
                             </td>
                             <td style="text-align:center; vertical-align:middle">
                                 <button id="custNotes" class="custNotes" style="background-image: url(img/notes_exist.png)" type="button" title="Customer Notes"></button>
@@ -355,7 +355,7 @@
                             <td class="hiddenFlag" style="display:none;">Sent</td>
                             <td class="hiddenNotes" style="display:none;"></td>
                             <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
-                                <input name="cust_id" id="flag" value="9" type="checkbox" checked="yes" onchange="send_single_email(this)">
+                                <input name="cust_id" id="flag" value="9" type="checkbox" checked="yes" onchange="send_single_email_static(this)">
                             </td>
                             <td style="text-align:center; vertical-align:middle">
                                 <button id="custNotes" class="custNotes" type="button" title="Customer Notes"></button>
@@ -383,7 +383,7 @@
                             <td class="hiddenFlag" style="display:none;">Not Sent</td>
                             <td class="hiddenNotes" style="display:none;"></td>
                             <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
-                                <input name="cust_id" id="flag" value="10" type="checkbox" onchange="send_single_email(this)">
+                                <input name="cust_id" id="flag" value="10" type="checkbox" onchange="send_single_email_static(this)">
                             </td>
                             <td style="text-align:center; vertical-align:middle">
                                 <button id="custNotes" class="custNotes" type="button" title="Customer Notes"></button>
@@ -411,7 +411,7 @@
                             <td class="hiddenFlag" style="display:none;">Sent</td>
                             <td class="hiddenNotes" style="display:none;">Eleventh customer note</td>
                             <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
-                                <input name="cust_id" id="flag" value="11" type="checkbox" checked="yes" onchange="send_single_email(this)">
+                                <input name="cust_id" id="flag" value="11" type="checkbox" checked="yes" onchange="send_single_email_static(this)">
                             </td>
                             <td style="text-align:center; vertical-align:middle">
                                 <button id="custNotes" class="custNotes" style="background-image: url(img/notes_exist.png)" type="button" title="Customer Notes"></button>
@@ -439,7 +439,7 @@
                             <td class="hiddenFlag" style="display:none;">Not Sent</td>
                             <td class="hiddenNotes" style="display:none;"></td>
                             <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
-                                <input name="cust_id" id="flag" value="12" type="checkbox" onchange="send_single_email(this)">
+                                <input name="cust_id" id="flag" value="12" type="checkbox" onchange="send_single_email_static(this)">
                             </td>
                             <td style="text-align:center; vertical-align:middle">
                                 <button id="custNotes" class="custNotes" type="button" title="Customer Notes"></button>
@@ -467,7 +467,7 @@
                             <td class="hiddenFlag" style="display:none;">Sent</td>
                             <td class="hiddenNotes" style="display:none;">Thirteenth customer note</td>
                             <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
-                                <input name="cust_id" id="flag" value="13" type="checkbox" checked="yes" onchange="send_single_email(this)">
+                                <input name="cust_id" id="flag" value="13" type="checkbox" checked="yes" onchange="send_single_email_static(this)">
                             </td>
                             <td style="text-align:center; vertical-align:middle">
                                 <button id="custNotes" class="custNotes" style="background-image: url(img/notes_exist.png)" type="button" title="Customer Notes"></button>
@@ -495,7 +495,7 @@
                             <td class="hiddenFlag" style="display:none;">Not Sent</td>
                             <td class="hiddenNotes" style="display:none;"></td>
                             <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
-                                <input name="cust_id" id="flag" value="14" type="checkbox" onchange="send_single_email(this)">
+                                <input name="cust_id" id="flag" value="14" type="checkbox" onchange="send_single_email_static(this)">
                             </td>
                             <td style="text-align:center; vertical-align:middle">
                                 <button id="custNotes" class="custNotes" type="button" title="Customer Notes"></button>
@@ -523,7 +523,7 @@
                             <td class="hiddenFlag" style="display:none;">Sent</td>
                             <td class="hiddenNotes" style="display:none;">Fifteenth customer note</td>
                             <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
-                                <input name="cust_id" id="flag" value="15" type="checkbox" checked="yes" onchange="send_single_email(this)">
+                                <input name="cust_id" id="flag" value="15" type="checkbox" checked="yes" onchange="send_single_email_static(this)">
                             </td>
                             <td style="text-align:center; vertical-align:middle">
                                 <button id="custNotes" class="custNotes" style="background-image: url(img/notes_exist.png)" type="button" title="Customer Notes"></button>
@@ -551,7 +551,7 @@
                             <td class="hiddenFlag" style="display:none;">Not Sent</td>
                             <td class="hiddenNotes" style="display:none;"></td>
                             <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
-                                <input name="cust_id" id="flag" value="16" type="checkbox" onchange="send_single_email(this)">
+                                <input name="cust_id" id="flag" value="16" type="checkbox" onchange="send_single_email_static(this)">
                             </td>
                             <td style="text-align:center; vertical-align:middle">
                                 <button id="custNotes" class="custNotes" type="button" title="Customer Notes"></button>
@@ -579,7 +579,7 @@
                             <td class="hiddenFlag" style="display:none;">Sent</td>
                             <td class="hiddenNotes" style="display:none;"></td>
                             <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
-                                <input name="cust_id" id="flag" value="17" type="checkbox" checked="yes" onchange="send_single_email(this)">
+                                <input name="cust_id" id="flag" value="17" type="checkbox" checked="yes" onchange="send_single_email_static(this)">
                             </td>
                             <td style="text-align:center; vertical-align:middle">
                                 <button id="custNotes" class="custNotes" type="button" title="Customer Notes"></button>
@@ -607,7 +607,7 @@
                             <td class="hiddenFlag" style="display:none;">Not Sent</td>
                             <td class="hiddenNotes" style="display:none;">Eighteenth customer note</td>
                             <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
-                                <input name="cust_id" id="flag" value="18" type="checkbox" onchange="send_single_email(this)">
+                                <input name="cust_id" id="flag" value="18" type="checkbox" onchange="send_single_email_static(this)">
                             </td>
                             <td style="text-align:center; vertical-align:middle">
                                 <button id="custNotes" class="custNotes" style="background-image: url(img/notes_exist.png)" type="button" title="Customer Notes"></button>
@@ -635,7 +635,7 @@
                             <td class="hiddenFlag" style="display:none;">Sent</td>
                             <td class="hiddenNotes" style="display:none;"></td>
                             <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
-                                <input name="cust_id" id="flag" value="19" type="checkbox" checked="yes" onchange="send_single_email(this)">
+                                <input name="cust_id" id="flag" value="19" type="checkbox" checked="yes" onchange="send_single_email_static(this)">
                             </td>
                             <td style="text-align:center; vertical-align:middle">
                                 <button id="custNotes" class="custNotes" type="button" title="Customer Notes"></button>
@@ -663,7 +663,7 @@
                             <td class="hiddenFlag" style="display:none;">Not Sent</td>
                             <td class="hiddenNotes" style="display:none;">Twentieth customer note</td>
                             <td style="text-align:center; vertical-align:middle" title="Checked=Email Sent, Unchecked=Email Not Sent">
-                                <input name="cust_id" id="flag" value="20" type="checkbox" onchange="send_single_email(this)">
+                                <input name="cust_id" id="flag" value="20" type="checkbox" onchange="send_single_email_static(this)">
                             </td>
                             <td style="text-align:center; vertical-align:middle">
                                 <button id="custNotes" class="custNotes" style="background-image: url(img/notes_exist.png)" type="button" title="Customer Notes"></button>
@@ -692,12 +692,13 @@
   <script type="text/javascript" src="js/main.js"></script>
   <script>
     // Example function to handle the email sending action
-    function send_single_email(element) {
-        if (!element.checked) {
-            // Do nothing if the checkbox is already checked
+    function send_single_email_static(element) {
+        if (element.checked) {
+            alert("Unchecking email flag for for customer ID: " + element.value + ".\n\rYou've already sent an email to this customer, sending too many similar emails might result in the email being marked as Spam.");
             return;
         } else {
-            alert("Sending email for customer ID: " + element.value);
+            // Do nothing if the checkbox is not already checked
+            return;
         }
     }
     

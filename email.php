@@ -92,10 +92,11 @@ include('container.php');
 			<li id="var_comp_address">{{ company_address }}<button title="Copy Variable" class="copyButton" onclick="copy_to_clipboard(event, '#var_comp_address')"></button></li>
 			<li id="var_comp_phone">{{ company_phone }}<button title="Copy Variable" class="copyButton" onclick="copy_to_clipboard(event, '#var_comp_phone')"></button></li>
 			<li id="var_comp_email">{{ company_email }}<button title="Copy Variable" class="copyButton" onclick="copy_to_clipboard(event, '#var_comp_email')"></button></li>
+			<li id="var_comp_website">{{ company_website }}<button title="Copy Variable" class="copyButton" onclick="copy_to_clipboard(event, '#var_comp_website')"></button></li>
 			<li id="var_comp_google_place_id">{{ company_google_place_id }}<button title="Copy Variable" class="copyButton" onclick="copy_to_clipboard(event, '#var_comp_google_place_id')"></button></li>
 			<li id="var_url_google">{{ url_google }}<button title="Copy Variable" class="copyButton" onclick="copy_to_clipboard(event, '#var_url_google')"></button></li>
 			<li id="var_url_facebook">{{ url_facebook }}<button title="Copy Variable" class="copyButton" onclick="copy_to_clipboard(event, '#var_url_facebook')"></button></li>
-			<li id="var_url_twitter">{{ url_twitter }}<button title="Copy Variable" class="copyButton" onclick="copy_to_clipboard(event, '#var_url_twitter')"></button></li>
+			<li id="var_url_x">{{ url_x }}<button title="Copy Variable" class="copyButton" onclick="copy_to_clipboard(event, '#var_url_x')"></button></li>
 			<li id="var_url_linkedin">{{ url_linkedin }}<button title="Copy Variable" class="copyButton" onclick="copy_to_clipboard(event, '#var_url_linkedin')"></button></li>
 			<li id="var_url_instagram">{{ url_instagram }}<button title="Copy Variable" class="copyButton" onclick="copy_to_clipboard(event, '#var_url_instagram')"></button></li>
 			<li id="var_url_youtube">{{ url_youtube }}<button title="Copy Variable" class="copyButton" onclick="copy_to_clipboard(event, '#var_url_youtube')"></button></li>

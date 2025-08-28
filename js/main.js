@@ -26,43 +26,55 @@ function copy_to_clipboard(event, element) {
 // Set Tables Original Data
 // This will reset to the original sorting when adding a new customer after a sort
 function setOriginalData() {
-  originalData = $("#data_table tbody tr").get();
+  const $tbody = $("#data_table tbody");
+  const $rows = $tbody.find("tr").not("#noResultsRow");
+
+  if ($rows.length === 0) {
+    $tbody.html(`
+      <tr id="noResultsRow">
+        <td colspan="11" style="text-align:center; color:gray;">
+          No customers -- start by creating one!
+        </td>
+      </tr>
+    `);
+    originalData = [];
+  } else {
+    originalData = $rows.get();
+  }
 }
+
 
 // Search for Customers
 const searchCustomers = () => {
-  // Check if Counter is NOT Null
   if (counter != null) {
-    alert(
-      "You cannot perform a Search when you're in the process of creating a new Customer.\n\rPlease delete the bottom row and try again."
-    );
+    alert("You cannot perform a Search when you're in the process of creating a new Customer.\n\rPlease delete the bottom row and try again.");
     return;
   }
 
-  const columns = [
-    { name: "Customer ID", index: 0, isFilter: false },
-    { name: "First Name", index: 1, isFilter: true },
-    { name: "Last Name", index: 2, isFilter: true },
-    { name: "Email", index: 3, isFilter: true },
-    { name: "Phone", index: 4, isFilter: true },
-  ];
+  const input = document.querySelector("#myInput").value.toLowerCase();
+  const rows = document.querySelectorAll("#data_table tbody tr");
+  let matchCount = 0;
 
-  const filterColumns = columns.filter((c) => c.isFilter).map((c) => c.index);
-  const trs = document.querySelectorAll(`#data_table tr:not(.header)`);
-  const filter = document.querySelector("#myInput").value;
-  const regex = new RegExp(escape(filter), "i");
-  const isFoundInTds = (td) => regex.test(td.innerHTML);
-  const isFound = (childrenArr) => childrenArr.some(isFoundInTds);
-  const setTrStyleDisplay = ({ style, children }) => {
-    style.display = isFound([
-      ...filterColumns.map((c) => children[c]), // <-- filter Columns
-    ])
-      ? ""
-      : "none";
-  };
+  rows.forEach(row => {
+    const text = row.innerText.toLowerCase();
+    const show = text.includes(input);
+    row.style.display = show ? "" : "none";
+    if (show) matchCount++;
+  });
 
-  trs.forEach(setTrStyleDisplay);
+  // Remove existing 'no results' row
+  const existingMsg = document.querySelector("#noResultsRow");
+  if (existingMsg) existingMsg.remove();
+
+  if (matchCount === 0) {
+    const tbody = document.querySelector("#data_table tbody");
+    const noRow = document.createElement("tr");
+    noRow.id = "noResultsRow";
+    noRow.innerHTML = `<td colspan="11" style="text-align:center; color:gray;">No customers found, try searching for something else.</td>`;
+    tbody.appendChild(noRow);
+  }
 };
+
 
 // Export Table to CSV
 function download_table_as_csv(table_id, separator = ",") {
@@ -508,12 +520,13 @@ $(document).ready(function () {
           "&cust_phone_new=" +
           cust_phone_new +
           "&command=createCustomer",
-        dataType: "HTML",
+        dataType: "json",
         success: function (data) {
           $("#custAdd").closest("tr").remove();
           counter = null;
 
-          json = eval("(" + data + ")");
+          //json = eval("(" + data + ")");
+          var json = typeof data === "string" ? JSON.parse(data) : data;
 
           console.log(json);
 

@@ -4,10 +4,13 @@ services:
     image: mysql:latest
     environment: 
       MYSQL_DATABASE: palm_tree
-      MYSQL_ROOT_PASSWORD:
-      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_ALLOW_EMPTY_PASSWORD: 0
+    ports:
+      - "3306:3306"
     volumes:
       - "./sql:/docker-entrypoint-initdb.d"
+      - db_data:/var/lib/mysql
     networks:
       - palm-tree-docker
   www:
@@ -38,5 +41,5 @@ services:
 networks:
   palm-tree-docker:
     driver: bridge
-
-
+volumes:
+  db_data:

@@ -26,6 +26,7 @@
 **Palm Tree** is a web based CRM application with Google Business Review email request capabilities.
  - Keep track of your Customers in a digital format - ditch the pen and paper!
  - Send marketing emails out, including emails requesting Google Business Reviews.
+ - Includes pre-built integrations with other SaaS systems such as [HubSpot](hubspot.com).
  - Directly open a Review window on your Google Business page with a click of a button within the email.
  - Perfect for small businesses, entrepreneurs, and anyone looking to keep track of their customers and send out marketing emails.
  - Visit a demo of the application [here](https://scottgriv.github.io/Palm-Tree/).
@@ -47,6 +48,7 @@
     - [Using XAMPP (Alternative)](#using-xampp-alternative)
 - [What's Inside?](#whats-inside)
 - [Fully Interactive Customer Table](#fully-interactive-customer-table)
+- [Supported Integrations](#supported-integrations)
 - [Custom Email Template](#custom-email-template)
 - [Configure Your Business](#configure-your-business)
 - [Send Emails to Your Customers](#send-emails-to-your-customers)
@@ -65,6 +67,7 @@
 - [x] Custom Email Template
 - [x] Configure Your Business
 - [x] Send Emails to Your Customers
+- [x] Pre-built Integrations
 
 ## Background Story
 
@@ -182,10 +185,13 @@ Palm-Tree
 ├─ encryption.php # Encryption file used to encrypt/decrypt data in the database                         
 ├─ footer.php # The websites footer                             
 ├─ header.php # The website's header which also contains the path for favorite icons and remote JavaScript/CSS libraries   
+├─ hubspot_log.txt # HubSpot integration log file
 ├─ index.html # Demo page built to demo the application on GitHub Pages.                        
-├─ index.php # Default landing page of the website which contains a redirect to `customers.php` (the Customers screen)                            
+├─ index.php # Default landing page of the website which contains a redirect to `customers.php` (the Customers screen)
+├─ integrations.php # PHP file behind the Integrations screen
 ├─ send_email.php # PHP file used to send emails out to customers
 ├─ Dockerfile # Dockerfile for the application
+├─ palm-tree-crm-k8s.yaml # Kubernetes YAML file
 ├─ .gitignore # Git ignore file
 ├─ .gitattributes # Git attributes file
 ├─ .github # GitHub folder                                                             
@@ -240,6 +246,32 @@ Palm-Tree
 
 ---------------
 
+## Supported Integrations
+
+<div align="center">
+    <a href="#integrations" target="_blank">
+        <img src="docs/images/demo_integrations.png" style="width: 80%;"/>
+    </a>
+    <br>
+    <i>Setup supported integrations on the integration screen.</i>
+</div>
+<br>
+
+- Add an API Key and API Endpoint URL to enable each integration.
+- You can also toggle each integration by checking/unchecking the "Enable integration" checkbox.
+- Below is the current list of supported integrations, and what data is used:
+
+1. [HubSpot](hubspot.com)
+    - Integrations
+        - Contacts (Customers)
+            - Add, Update, and Delete customers in both **Palm Tree** and HubSpot -- they'll sync up.
+    - [API Documentation](https://developers.hubspot.com/docs/reference/api/overview)
+
+> [!NOTE]
+> The API Keys are stored in the database.
+
+---------------
+
 ## Custom Email Template
 
 <div align="center">
@@ -289,7 +321,7 @@ Palm-Tree
     * Google Place ID
         * Used to automatically open up Google Reviews for your business using the provided email template.
     * Social Media Email Hyperlinks:
-        * Google, Facebook, Twitter, LinkedIn, Instagram, YouTube, Amazon, Pinterest, Etsy, and Shopify.
+        * Google, Facebook, X, LinkedIn, Instagram, YouTube, Amazon, Pinterest, Etsy, Shopify, and HubSpot.
 
 ---------------
 

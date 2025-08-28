@@ -58,10 +58,11 @@ CREATE TABLE `company` (
   `comp_address` varchar(200) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Company Address',
   `comp_phone` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Company Phone',
   `comp_email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Company Email',
+  `comp_website` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Company Website',
   `comp_google_place_id` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Company Google Place ID',
   `comp_google_url` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Company Google Business URL',
   `comp_facebook_url` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Company Facebook Business URL',
-  `comp_twitter_url` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Company Twitter Business URL',
+  `comp_x_url` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Company X Business URL',
   `comp_linkedin_url` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Company LinkedIn Business URL',
   `comp_instagram_url` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Company Instagram Business URL',
   `comp_youtube_url` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Company YouTube Business URL',
@@ -69,6 +70,7 @@ CREATE TABLE `company` (
   `comp_pinterest_url` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Company Pinterest Business URL',
   `comp_etsy_url` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Company Etsy Business URL',
   `comp_shopify_url` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Company Shopify Business URL',
+  `comp_hubspot_url` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT 'Company HubSpot Business URL',
   `comp_created` timestamp NOT NULL DEFAULT current_timestamp() COMMENT 'Company Date/Time Created',
   `comp_edited` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp() COMMENT 'Company Date/Time Edited',
   PRIMARY KEY (`comp_id`)
@@ -83,6 +85,40 @@ LOCK TABLES `company` WRITE;
 /*!40000 ALTER TABLE `company` DISABLE KEYS */;
 INSERT INTO `company` VALUES (1,'Your Company Name','Your Company Description',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'0000-00-00 00:00:00','0000-00-00 00:00:00');
 /*!40000 ALTER TABLE `company` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `integrations`
+--
+
+DROP TABLE IF EXISTS `integrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+
+CREATE TABLE `integrations` (
+  `integration_id` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'Integration ID (Primary Key)',
+  `integration_name` VARCHAR(50) NOT NULL COMMENT 'Integration Name (e.g., HubSpot)',
+  `api_key` TEXT NOT NULL COMMENT 'API Key or Token (encrypted or hidden in UI)',
+  `endpoint_url` TEXT NOT NULL COMMENT 'API Endpoint URL',
+  `enabled` TINYINT(1) DEFAULT 1 COMMENT 'Enable/Disable Integration',
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP COMMENT 'Creation Timestamp',
+  `updated_at` TIMESTAMP NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP COMMENT 'Last Updated Timestamp',
+  PRIMARY KEY (`integration_id`),
+  UNIQUE KEY `unique_integration_name` (`integration_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `integrations`
+--
+
+LOCK TABLES `integrations` WRITE;
+/*!40000 ALTER TABLE `integrations` DISABLE KEYS */;
+INSERT INTO `integrations` (`integration_name`, `api_key`, `endpoint_url`, `enabled`, `created_at`) 
+VALUES 
+('HubSpot', '', '', 1, NOW());
+/*!40000 ALTER TABLE `integrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -195,10 +231,11 @@ SET @saved_cs_client     = @@character_set_client;
  1 AS `comp_address`,
  1 AS `comp_phone`,
  1 AS `comp_email`,
+ 1 AS `comp_website`,
  1 AS `comp_google_place_id`,
  1 AS `comp_google_url`,
  1 AS `comp_facebook_url`,
- 1 AS `comp_twitter_url`,
+ 1 AS `comp_x_url`,
  1 AS `comp_linkedin_url`,
  1 AS `comp_instagram_url`,
  1 AS `comp_youtube_url`,
@@ -295,7 +332,7 @@ SET character_set_client = @saved_cs_client;
 /*!50001 SET collation_connection      = utf8mb4_general_ci */;
 /*!50001 CREATE ALGORITHM=UNDEFINED */
 /*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
-/*!50001 VIEW `v_email_build` AS select `company`.`comp_title` AS `comp_title`,`company`.`comp_subtitle` AS `comp_subtitle`,`company`.`comp_owner` AS `comp_owner`,`company`.`comp_address` AS `comp_address`,`company`.`comp_phone` AS `comp_phone`,`company`.`comp_email` AS `comp_email`,`company`.`comp_google_place_id` AS `comp_google_place_id`,`company`.`comp_google_url` AS `comp_google_url`,`company`.`comp_facebook_url` AS `comp_facebook_url`,`company`.`comp_twitter_url` AS `comp_twitter_url`,`company`.`comp_linkedin_url` AS `comp_linkedin_url`,`company`.`comp_instagram_url` AS `comp_instagram_url`,`company`.`comp_youtube_url` AS `comp_youtube_url`,`company`.`comp_amazon_url` AS `comp_amazon_url`,`company`.`comp_pinterest_url` AS `comp_pinterest_url`,`company`.`comp_etsy_url` AS `comp_etsy_url`,`company`.`comp_shopify_url` AS `comp_shopify_url`,`email`.`mail_smtp` AS `mail_smtp`,`email`.`mail_from` AS `mail_from`,`email`.`mail_from_password` AS `mail_from_password`,`email`.`mail_cc` AS `mail_cc`,`email`.`mail_bcc` AS `mail_bcc`,`email`.`mail_subject` AS `mail_subject`,`email`.`mail_body` AS `mail_body`,`customers`.`cust_id` AS `cust_id`,`customers`.`cust_first_name` AS `cust_first_name`,`customers`.`cust_last_name` AS `cust_last_name`,`customers`.`cust_email` AS `cust_email` from ((`company` left join `customers` on(`company`.`comp_id` = 1)) left join `email` on(`email`.`mail_id` = 1)) */;
+/*!50001 VIEW `v_email_build` AS select `company`.`comp_title` AS `comp_title`,`company`.`comp_subtitle` AS `comp_subtitle`,`company`.`comp_owner` AS `comp_owner`,`company`.`comp_address` AS `comp_address`,`company`.`comp_phone` AS `comp_phone`,`company`.`comp_email` AS `comp_email`, `company`.`comp_website` AS `comp_website`, `company`.`comp_google_place_id` AS `comp_google_place_id`,`company`.`comp_google_url` AS `comp_google_url`,`company`.`comp_facebook_url` AS `comp_facebook_url`,`company`.`comp_x_url` AS `comp_x_url`,`company`.`comp_linkedin_url` AS `comp_linkedin_url`,`company`.`comp_instagram_url` AS `comp_instagram_url`,`company`.`comp_youtube_url` AS `comp_youtube_url`,`company`.`comp_amazon_url` AS `comp_amazon_url`,`company`.`comp_pinterest_url` AS `comp_pinterest_url`,`company`.`comp_etsy_url` AS `comp_etsy_url`,`company`.`comp_shopify_url` AS `comp_shopify_url`,`email`.`mail_smtp` AS `mail_smtp`,`email`.`mail_from` AS `mail_from`,`email`.`mail_from_password` AS `mail_from_password`,`email`.`mail_cc` AS `mail_cc`,`email`.`mail_bcc` AS `mail_bcc`,`email`.`mail_subject` AS `mail_subject`,`email`.`mail_body` AS `mail_body`,`customers`.`cust_id` AS `cust_id`,`customers`.`cust_first_name` AS `cust_first_name`,`customers`.`cust_last_name` AS `cust_last_name`,`customers`.`cust_email` AS `cust_email` from ((`company` left join `customers` on(`company`.`comp_id` = 1)) left join `email` on(`email`.`mail_id` = 1)) */;
 /*!50001 SET character_set_client      = @saved_cs_client */;
 /*!50001 SET character_set_results     = @saved_cs_results */;
 /*!50001 SET collation_connection      = @saved_col_connection */;

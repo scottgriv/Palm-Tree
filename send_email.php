@@ -34,10 +34,11 @@ function sendEmail($cust_id, $flag, $type)
                     comp_address,
                     comp_phone,
                     comp_email,
+                    comp_website,
                     comp_google_place_id,
                     comp_google_url,
                     comp_facebook_url,
-                    comp_twitter_url,
+                    comp_x_url,
                     comp_linkedin_url,
                     comp_instagram_url,
                     comp_youtube_url,
@@ -138,10 +139,11 @@ function sendEmail($cust_id, $flag, $type)
       $variables['company_address'] = $email_build['comp_address'];
       $variables['company_phone'] = $email_build['comp_phone'];
       $variables['company_email'] = $email_build['comp_email'];
+      $variables['company_website'] = $email_build['comp_website'];
       $variables['company_google_place_id'] = $email_build['comp_google_place_id'];
       $variables['url_google'] = $email_build['comp_google_url'];
       $variables['url_facebook'] = $email_build['comp_facebook_url'];
-      $variables['url_twitter'] = $email_build['comp_twitter_url'];
+      $variables['url_x'] = $email_build['comp_x_url'];
       $variables['url_linkedin'] = $email_build['comp_linkedin_url'];
       $variables['url_instagram'] = $email_build['comp_instagram_url'];
       $variables['url_youtube'] = $email_build['comp_youtube_url'];

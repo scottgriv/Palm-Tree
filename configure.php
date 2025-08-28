@@ -6,7 +6,7 @@ include('container.php');
 <div class="container home">
 	<form method="post" action="commands.php" enctype="multipart/form-data">
 		<h5 style="color:#FF0000;line-height: 35px;font-size:13px"><b>Configure Company</b></h5>
-		<label for="fname"><img src="img/config/config_logo.png" alt="links" width="25" height="25" /> Company Logo:</label><br>
+		<label for="fname"><img src="img/config/config_logo.png" alt="links" width="23" height="23" /> Company Logo:</label><br>
 		<label style="font-size: 1rem;color: gray">This will be the Logo on the Home landing page</label><br>
 		<label style="font-size: 1rem;color: gray">Recommended Size is: 50px x 50px</label><br>
 		<!--default html file upload button-->
@@ -20,18 +20,20 @@ include('container.php');
 							comp_owner, 
 							comp_address, 
 							comp_phone, 
-							comp_email, 
+							comp_email,
+							comp_website, 
 							comp_google_place_id, 
 							comp_google_url, 
 							comp_facebook_url, 
-							comp_twitter_url, 
+							comp_x_url, 
 							comp_linkedin_url, 
 							comp_instagram_url, 
 							comp_youtube_url, 
 							comp_amazon_url,
 							comp_pinterest_url,
 							comp_etsy_url,
-							comp_shopify_url 
+							comp_shopify_url,
+							comp_hubspot_url
 						FROM company WHERE comp_id = 1";
 
 		$stmnt = mysqli_prepare($conn, $sql_query);
@@ -58,6 +60,9 @@ include('container.php');
 			<label for="fname"><img src="img/config/config_email.png" alt="links" width="25" height="25" /> Company Contact Email:</label><br>
 			<label style="font-size: 1rem;color: gray">This will be the Email Address your Customers will be able to contact you with, also used in the email template</label><br>
 			<input class="form-control rounded-0" type="text" id="comp_email" name="comp_email" style="width: 400px;" placeholder="noreply@company.com" value="<?php echo $company['comp_email']; ?>"><br>
+			<label for="fname"><img src="img/link/link_website.png" alt="links" width="25" height="25" /> Company Website:</label><br>
+			<label style="font-size: 1rem;color: gray">This will be your Business Website used in your email template</label><br>
+			<input class="form-control rounded-0" type="text" id="comp_website" name="comp_website" style="width: 400px;" placeholder="http://acmecorp.com" value="<?php echo $company['comp_website']; ?>"><br>
 			<label for="fname"><img src="img/config/config_google_places.png" alt="links" width="25" height="25" /> Google Business Place ID:</label><br>
 			<label style="font-size: 1rem;color: gray">The Place ID is used to build a link to review your Google Business Profile in the Email Template</label><br>
 			<label style="font-size: 1rem;color: gray">Follow this link <a target="_blank" rel="noopener noreferrer" href="https://companys.google.com/maps/documentation/places/web-service/place-id">here</a> and find your business, then copy and paste your Place ID in the following field</label><br>
@@ -68,9 +73,9 @@ include('container.php');
 			<label for="fname"><img src="img/link/link_facebook.png" alt="links" width="25" height="25" /> Facebook Business URL:</label><br>
 			<label style="font-size: 1rem;color: gray">Web Address for your Facebook Business Profile</label><br>
 			<input class="form-control rounded-0" type="text" id="comp_facebook_url" name="comp_facebook_url" style="width: 400px;" placeholder="https://www.facebook.com/Google" value="<?php echo $company['comp_facebook_url']; ?>"><br>
-			<label for="fname"><img src="img/link/link_twitter.png" alt="links" width="25" height="25" /> Twitter Business URL:</label><br>
-			<label style="font-size: 1rem;color: gray">Web Address for your Twitter Business Profile</label><br>
-			<input class="form-control rounded-0" type="text" id="comp_twitter_url" name="comp_twitter_url" style="width: 400px;" placeholder="https://twitter.com/Google" value="<?php echo $company['comp_twitter_url']; ?>"><br>
+			<label for="fname"><img src="img/link/link_x.png" alt="links" width="25" height="25" /> X Business URL:</label><br>
+			<label style="font-size: 1rem;color: gray">Web Address for your X Business Profile</label><br>
+			<input class="form-control rounded-0" type="text" id="comp_x_url" name="comp_x_url" style="width: 400px;" placeholder="https://x.com/Google" value="<?php echo $company['comp_x_url']; ?>"><br>
 			<label for="fname"><img src="img/link/link_linkedin.png" alt="links" width="25" height="25" /> LinkedIn Business URL:</label><br>
 			<label style="font-size: 1rem;color: gray">Web Address for your LinkedIn Business Profile</label><br>
 			<input class="form-control rounded-0" type="text" id="comp_linkedin_url" name="comp_linkedin_url" style="width: 400px;" placeholder="https://www.linkedin.com/company/google" value="<?php echo $company['comp_linkedin_url']; ?>"><br>
@@ -92,6 +97,9 @@ include('container.php');
 			<label for="fname"><img src="img/link/link_shopify.png" alt="links" width="25" height="25" /> Shopify Business URL:</label><br>
 			<label style="font-size: 1rem;color: gray">Web Address for your Shopify Business Profile</label><br>
 			<input class="form-control rounded-0" type="text" id="comp_shopify_url" name="comp_shopify_url" style="width: 400px;" placeholder="https://www.your-shop.myshopify.com" value="<?php echo $company['comp_shopify_url']; ?>"><br>
+			<label for="fname"><img src="img/link/link_hubspot.png" alt="links" width="25" height="25" /> HubSpot Business URL:</label><br>
+			<label style="font-size: 1rem;color: gray">Web Address for your HubSpot Business Profile</label><br>
+			<input class="form-control rounded-0" type="text" id="comp_hubspot_url" name="comp_hubspot_url" style="width: 400px;" placeholder="https://app-na2.hubspot.com/" value="<?php echo $company['comp_hubspot_url']; ?>"><br>
 		<?php } ?>
 		<button type="submit" class="btn btn-default read-more" style="background:#000081;color:white;" name="command" value="updateCompany">Update Company Information</button>
 	</form>

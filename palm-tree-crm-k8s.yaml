@@ -1,0 +1,98 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: palm-tree-mysql
+spec:
+  ports:
+    - port: 3306
+  selector:
+    app: palm-tree-mysql
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: palm-tree-mysql
+spec:
+  selector:
+    matchLabels:
+      app: palm-tree-mysql
+  template:
+    metadata:
+      labels:
+        app: palm-tree-mysql
+    spec:
+      containers:
+        - name: mysql
+          image: mysql:latest
+          env:
+            - name: MYSQL_DATABASE
+              value: palm_tree
+            - name: MYSQL_ROOT_PASSWORD
+              value: admin
+          ports:
+            - containerPort: 3306
+          volumeMounts:
+            - mountPath: /var/lib/mysql
+              name: mysql-storage
+            - mountPath: /docker-entrypoint-initdb.d
+              name: mysql-init
+      volumes:
+        - name: mysql-storage
+          persistentVolumeClaim:
+            claimName: mysql-pvc
+        - name: mysql-init
+          hostPath:
+            path: /Applications/XAMPP/xamppfiles/htdocs/Palm-Tree/sql
+            type: Directory
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: palm-tree-crm-service
+spec:
+  type: NodePort
+  selector:
+    app: palm-tree-crm
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: palm-tree-crm
+spec:
+  selector:
+    matchLabels:
+      app: palm-tree-crm
+  template:
+    metadata:
+      labels:
+        app: palm-tree-crm
+    spec:
+      containers:
+        - name: palm-tree-crm
+          image: php:8.1.6-apache
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: html
+              mountPath: /var/www/html
+      volumes:
+        - name: html
+          hostPath:
+            path: /Applications/XAMPP/xamppfiles/htdocs/Palm-Tree
+            type: Directory
